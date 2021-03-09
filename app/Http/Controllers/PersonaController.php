@@ -38,6 +38,7 @@ class PersonaController extends Controller
     {
         $datosPersona = request()->except('_token');
         Persona::insert($datosPersona);
+        return redirect('persona');
 
     }
 

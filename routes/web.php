@@ -8,8 +8,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
  
-Route::resource('persona',PersonaController::class);
-Auth::routes();
+//middleware() para que respete la autenticacion
+Route::resource('persona',PersonaController::class)->middleware('auth');
+
+//cancela el registro y recordar contraseña del login
+Auth::routes(['register'=>false,'reset'=>false]);
 
 
 Route::get('/home', [App\Http\Controllers\PersonaController::class, 'index'])->name('home');
