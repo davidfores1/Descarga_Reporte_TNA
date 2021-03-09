@@ -35,6 +35,8 @@
                                     class="btn btn-danger">
                             </form>
 
+                            <a href="{{url('pdf')}}" class="btn btn-success">Imprimir</a><br><br>
+
                         </td>
                     </tr>
                     @endforeach
