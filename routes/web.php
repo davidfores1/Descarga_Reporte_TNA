@@ -8,6 +8,10 @@ use App\Http\Controllers\PDFController;
 Route::get('/', function () {
     return view('auth.login');
 });
+
+Route::get('/cliente', function () {
+    return view('cliente.cliente');
+});
  
 //middleware() para que respete la autenticacion
 Route::resource('persona',PersonaController::class)->middleware('auth');
