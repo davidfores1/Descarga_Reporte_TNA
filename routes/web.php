@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonaController;
+use App\Http\Controllers\PDFController;
 
 
 Route::get('/', function () {
@@ -16,11 +17,11 @@ Route::resource('pdf',PDFController::class)->middleware('auth');
 Auth::routes(['register'=>false,'reset'=>false]);
 
 
-Route::get('/home', [App\Http\Controllers\PersonaController::class, 'index'])->name('home');
-Route::get('/pdf', [App\Http\Controllers\PDFController::class, 'PDF'])->name('descargarPDF');
+Route::get('/home', [PersonaController::class, 'index'])->name('home');
+Route::get('/pdf/{id}', [PDFController::class, 'show'])->name('descargar');
 
-Route::group(['middleware' => 'auth'], function () {
+// Route::group(['middleware' => 'auth'], function () {
   
-Route::get('/', [App\Http\Controllers\PersonaController::class, 'index'])->name('home');
+// Route::get('/', [PersonaController::class, 'index'])->name('home');
 
-});
+// });

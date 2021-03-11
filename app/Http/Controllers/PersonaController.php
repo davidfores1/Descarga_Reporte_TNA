@@ -12,10 +12,19 @@ class PersonaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $datos['personas']=Persona::paginate(5);
-        return view('persona.index',$datos);
+      
+        $documento = $request->get('documento');
+        $nombre = $request->get('nombre');
+
+        $personas = Persona::orderBy('id','ASC')
+        ->documento($documento)
+        ->nombre($nombre)
+        ->paginate(3);
+ //       $datos['personas']=Persona::paginate(5);
+        //return view('persona.index',$datos);
+        return view('persona.index',compact('personas'));
     }
 
     /**

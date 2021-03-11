@@ -3,12 +3,24 @@
 
 <div class="container">
 
-    <div class="card bg-light mb-3">
-        <div class="card-header">Persona</div>
-
+    <div class="card w-78">
         <div class="card-body">
-            <a href="{{url('persona/create')}}" class="btn btn-success">Nuevo</a><br><br>
 
+            <div>
+
+                <a href="{{url('persona/create')}}" class="btn btn-success" style="float:left">Nuevo</a><br><br>
+                <form method="get" action="{{url('home')}}" class="form-inline" style="float:right">
+
+                    <div class="form-group mx-sm-3">
+                        <input type="number" class="form-control" name="documento" placeholder="Documento">
+                    </div>
+                    <div class="form-group mx-sm-3">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                    <a href="{{url('persona')}}" class="btn btn-success" style="float:left">Restablecer</a><br><br>
+                </form> <br><br>
+            </div>
             <table class="table">
                 <thead class="table-active">
                     <tr>
@@ -35,7 +47,7 @@
                                     class="btn btn-danger">
                             </form>
 
-                            <a href="{{url('pdf')}}" class="btn btn-success">Imprimir</a><br><br>
+                            <a href="{{route('descargar',$persona->id)}}" class="btn btn-success">Imprimir</a><br><br>
 
                         </td>
                     </tr>
@@ -43,11 +55,13 @@
                 </tbody>
             </table>
             {!! $personas->links() !!}
+
         </div>
+
     </div>
 
-
-
 </div>
+</div>
+<div>
 
 @endsection

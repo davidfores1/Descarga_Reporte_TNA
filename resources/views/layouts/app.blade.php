@@ -79,5 +79,6 @@
             @yield('content')
         </main>
     </div>
+    <script src="js/descargarPDF.js"></script>
 </body>
 </html>
