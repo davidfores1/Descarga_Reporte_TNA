@@ -13,16 +13,15 @@ class PDFController extends Controller
 
     
 
-        if($personas->documento == 54645678){
+        // if($personas->documento == 54645678){
 
-            $personas->documento = "img/Asoclinic.png";
+        //     $personas->documento = "img/Asoclinic.png";
 
-        }else{
+        // }else{
 
-            $personas->documento = "img/paypal.png";
-        }
+        //     $personas->documento = "img/paypal.png";
+        // }
 
-    
 
         $pdf =\PDF::loadView('descargarPDF/descargarPDF',compact('personas'));
         $pdf -> setPaper ( 'A4' , 'landscape' );

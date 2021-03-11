@@ -86,9 +86,6 @@ class PersonaController extends Controller
         $datosPersona = request()->except(['_token','_method']);
         Persona::where('id','=',$id)->update($datosPersona);
         return redirect('persona');
-
-        // $persona = Persona::findOrFail($id);
-        // return view('persona.edit', compact('persona'));
     }
 
     /**

@@ -1,0 +1,63 @@
+#contenedor {
+    padding: 0px 50px 0px 50px;
+}
+#cabecera {
+    background-color: white;
+    height: 24%;
+}
+#menu {
+    height: 15%;
+    /* background-color: #c8cacc; */
+}
+#contexto {
+    height: 29%;
+    /* background-color: #bdd2ef; */
+    /* float:left; */
+    width: 100%;
+}
+#derecha{
+    height:10%;
+    float:right;
+    width:50%;
+} 
+ #izquierda{
+    height:10%;
+    float:left;
+    width:50%;
+}
+
+#pie {
+    height: 10%;
+    margin: 50px 0px 0px 0px;
+     text-align: center
+}
+
+
+
+#left {
+    float: left;
+    width: 100px;
+}
+#center {
+    display: inline-block;
+    margin: 15px 0px 0px 370px;
+    width: 100px;
+}
+#right {
+    float: right;
+    width: 100px;
+}
+
+#posicionRi{
+   float: right;
+   margin: 10px;
+   padding: 10px; 
+}
+
+#posicionLe{
+    float: left;
+    margin: 15px 10px 10px 10px;
+    padding: 10px; 
+ }
+
+
