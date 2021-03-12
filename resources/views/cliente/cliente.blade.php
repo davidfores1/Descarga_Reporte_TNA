@@ -7,18 +7,12 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
-    <title>Document</title>
+    <link rel="stylesheet" href="css/cliente.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+    <title>Descarga resultados TNS</title>
 </head>
 
 <body>
@@ -34,21 +28,51 @@
         </div>
 
         <div class="col d-flex justify-content-center" style="padding-left: 60px;">
-        <form action="" method="post">
-            <div class="form-row">
-                <div class="form-group col-md-10">
-                    <label for="inputCity" style="padding-left: 30px;">Identificación:</label>
-                    <input type="text" class="form-control" id="inputCity">
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Identificación">
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Nombre">
+                    </div>
+
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+                        <a href="{{ url('/') }}" class="btn btn-primary mb-2">Admin</a>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row inline"> 
-                <div class="form-group col-md-10">
-                    <label for="inputCity" style="padding-left: 30px;">Contraseña:</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-            </div>
             </form>
         </div>
+
+        <table class="table">
+            <thead class="table-active">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">DOCUMENTO</th>
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col">FECHA</th>
+                    <th scope="col">OPCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <th></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+
+                        <a href="" class="btn btn-success">Imprimir</a><br><br>
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
 
 </body>
 
