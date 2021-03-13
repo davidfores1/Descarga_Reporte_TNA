@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/cliente.css">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
 
     <title>Descarga resultados TNS</title>
 </head>
@@ -28,15 +27,16 @@
         </div>
 
         <div class="col d-flex justify-content-center" style="padding-left: 60px;">
-            <form>
+            <form method="get" action="{{url('/validar')}}">
                 <div class="form-row align-items-center">
                     <div class="col-auto">
-                        <label class="sr-only" for="inlineFormInput">Name</label>
-                        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Identificación">
+                        <label class="sr-only" for="inlineFormInput">Identificación</label>
+                        <input type="text" class="form-control mb-2" id="identificación" placeholder="Identificación">
                     </div>
                     <div class="col-auto">
-                        <label class="sr-only" for="inlineFormInput">Name</label>
-                        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Nombre">
+                        <label class="sr-only" for="inlineFormInput">Contraseña</label>
+                        <input type="password" class="form-control mb-2" id="contrase" name="contrasena"
+                            placeholder="Contraseña">
                     </div>
 
                     <div class="col-auto">
@@ -47,33 +47,21 @@
             </form>
         </div>
 
-        <table class="table">
-            <thead class="table-active">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">DOCUMENTO</th>
-                    <th scope="col">NOMBRE</th>
-                    <th scope="col">FECHA</th>
-                    <th scope="col">OPCIONES</th>
-                </tr>
-            </thead>
-            <tbody>
+    </div>
 
-                <tr>
-                    <th></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+      @yield('tablaCliente')
+      </div>
+    </div>
+  </div>
 
-                        <a href="" class="btn btn-success">Imprimir</a><br><br>
+    
 
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-
+    <script src="js/cliente.js"></script>
+    <script src="js/axios.min.js"></script>
 </body>
 
 </html>
