@@ -6,7 +6,6 @@
     <div class="row justify-content-center">
     <a class="brand-link">
         <img src="img/Asoclinic.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span style="color: white" class="brand-text font-weight-light">Asoclinic</span>
     </a>
 
         <div class="col-md-8">

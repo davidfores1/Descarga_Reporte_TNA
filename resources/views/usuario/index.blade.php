@@ -8,7 +8,7 @@
             <div class="card">
                 <h6 class="dropdown-header">Menu</h6>
                 <a class="dropdown-item" href="{{url('home')}}">Pacientes</a>
-                <a class="dropdown-item" href="{{url('usuario')}}">Usuarios</a>
+                <a class="dropdown-item" href="#">Usuarios</a>
             </div>
         </div>
 
@@ -16,11 +16,10 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h3 class="card-title">Pacientes</h3>
+                    <h3 class="card-title">Usuarios</h3>
                     <hr>
                     <div>
-                    
-                        <a href="{{url('persona/create')}}" class="btn btn-success" style="float:left">Nuevo</a>
+                        <a href="{{route('registro')}}" class="btn btn-success" style="float:left">Nuevo</a>
 
                         <!-- FORMULARIO -->
                         <form method="get" action="{{url('home')}}" class="form-inline" style="float:right">
@@ -42,30 +41,30 @@
                         <thead class="table-active">
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">DOCUMENTO</th>
                                 <th scope="col">NOMBRE</th>
-                                <th scope="col">OPCIONES</th>
+                                <th scope="col">USUARIO</th>
+                                <th scope="col">FECHA DE REGISTRO</th>
+                                <th colspan="3">OPCIONES</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($personas as $persona)
+                            @foreach($usuarios as $usuario)
                             <tr>
-                                <th>{{$persona->id}}</th>
-                                <td>{{$persona->documento}}</td>
-                                <td>{{$persona->nombre}}</td>
+                                <th>{{$usuario->id}}</th>
+                                <td>{{$usuario->name}}</td>
+                                <td>{{$usuario->email}}</td>
+                                <td>{{$usuario->created_at}}</td>
                                 <td style="padding: 5px 0px 0px 0px">
 
-                                    <a href="{{url('/persona/'.$persona->id.'/edit')}}" class="btn btn-info">Editar</a>
+                                    <a href="#" class="btn btn-info">Editar</a>
 
-                                    <form action="{{ url('/persona/'. $persona->id)}}" method="post" class="d-inline">
+                                    <form action="#" method="post" class="d-inline">
                                         @csrf
                                         {{ method_field('DELETE') }}
                                         <input type="submit" onclick="return confirm('Quieres Borrar')" value="Borrar"
                                             class="btn btn-danger">
                                     </form>
 
-                                    <a href="{{route('descargar',$persona->id)}}"
-                                        class="btn btn-success">Imprimir</a>
 
                                 </td>
                             </tr>
@@ -73,7 +72,7 @@
                         </tbody>
                     </table>
                     <!-- PAGINACION -->
-                    {!! $personas->links() !!}
+
                 </div>
             </div>
         </div>
@@ -81,4 +80,4 @@
 
     <div>
 
-    @endsection
+        @endsection
