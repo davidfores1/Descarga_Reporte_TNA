@@ -12,6 +12,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/cliente', function () {
+    return view('cliente.cliente');
+});
+
  
 
 //middleware() para que respete la autenticacion
@@ -28,6 +32,8 @@ Route::get('/pdf/{id}', [PDFController::class, 'show'])->name('descargar');
 Route::get('/validar', [ContraController::class, 'ValidarC'])->name('validarCon');
 Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario');
 Route::get('/registro', [UsuarioController::class, 'showForm'])->name('registro');
+Route::post('/crearR', [UsuarioController::class, 'create'])->name('crearR');
+Route::post('/validator', [UsuarioController::class, 'validator'])->name('validar');
 
 
 // Route::group(['middleware' => 'auth'], function () {

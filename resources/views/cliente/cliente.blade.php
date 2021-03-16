@@ -49,19 +49,8 @@
 
     </div>
 
-<div class="row">
-  <div class="col-sm-12">
-    <div class="card">
-      <div class="card-body">
-      @yield('tablaCliente')
-      </div>
-    </div>
-  </div>
+    @yield('tablaCliente')
 
-    
-
-    <script src="js/cliente.js"></script>
-    <script src="js/axios.min.js"></script>
 </body>
 
 </html>

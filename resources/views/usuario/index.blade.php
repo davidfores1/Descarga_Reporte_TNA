@@ -72,7 +72,7 @@
                         </tbody>
                     </table>
                     <!-- PAGINACION -->
-
+                    {!! $usuarios->links() !!}
                 </div>
             </div>
         </div>
