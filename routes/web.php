@@ -5,7 +5,7 @@ use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ContraController;
 use App\Http\Controllers\UsuarioController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Auth\RegisterController;
 
 
 Route::get('/', function () {
@@ -21,7 +21,7 @@ Route::get('/cliente', function () {
 //middleware() para que respete la autenticacion
 Route::resource('persona',PersonaController::class)->middleware('auth');
 Route::resource('pdf',PDFController::class)->middleware('auth');
-// Route::resource('usuario',UsuarioController::class)->middleware('auth');
+;
 
 //cancela el registro y recordar contraseña del login
 // Auth::routes(['register'=>false,'reset'=>false]);

@@ -15,7 +15,7 @@ class ContraController extends Controller
         return view('cliente.tablaCliente',compact('personas'));
 
     }else{
-        return 201;
+      return redirect('cliente')->with('validarPaciente','ok');
     }
 }
 }

@@ -21,7 +21,7 @@ class PersonaController extends Controller
         $personas = Persona::orderBy('id','ASC')
         ->documento($documento)
         ->nombre($nombre)
-        ->paginate(3);
+        ->paginate(5);
  //       $datos['personas']=Persona::paginate(5);
         //return view('persona.index',$datos);
         return view('persona.index',compact('personas'));
@@ -47,7 +47,7 @@ class PersonaController extends Controller
     {
         $datosPersona = request()->except('_token');
         Persona::insert($datosPersona);
-        return redirect('persona');
+        return redirect('persona')->with('crearPaciente','ok');
 
     }
 
@@ -85,7 +85,7 @@ class PersonaController extends Controller
     {
         $datosPersona = request()->except(['_token','_method']);
         Persona::where('id','=',$id)->update($datosPersona);
-        return redirect('persona');
+        return redirect('persona')->with('editarPaciente','ok');
     }
 
     /**

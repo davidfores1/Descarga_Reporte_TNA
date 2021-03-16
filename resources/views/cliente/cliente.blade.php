@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- <script src="js/bootstrap.min.js"></script> -->
 
+     <!-- sweetalert2 -->
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <title>Descarga resultados TNS</title>
 </head>
 
@@ -51,6 +54,17 @@
 
     @yield('tablaCliente')
 
+ 
+    @if(session('validarPaciente') == 'ok')
+
+        <script >
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Contraseña incorrecta!',
+        })
+    </script>
+   @endif
 </body>
 
 </html>

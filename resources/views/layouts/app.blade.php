@@ -17,6 +17,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- sweetalert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -65,7 +68,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('Salir') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -81,19 +84,47 @@
 
         <main class="py-4">
             @yield('content')
+            
+            <!-- Crear usuario -->
+            @if(session('crearUsuario') == 'ok')
+
+            <script>
+            Swal.fire(
+                'registrado!',
+                'Usuario registrado.',
+                'success'
+            )
+            </script>
+            @endif
+
+            <!-- Crear Persona -->
+            @if(session('crearPaciente') == 'ok')
+
+            <script>
+            Swal.fire(
+                'registrado!',
+                'Paciente registrado.',
+                'success'
+            )
+            </script>
+            @endif
+
+             <!-- Editar Persona -->
+
+             @if(session('editarPaciente') == 'ok')
+
+            <script>
+            Swal.fire(
+                'Editado!',
+                'Paciente editado.',
+                'success'
+            )
+            </script>
+            @endif
         </main>
 
     </div>
-    
-        <script>
-                Swal.fire({
-                title: 'Error!',
-                text: 'Do you want to continue',
-                icon: 'error',
-                confirmButtonText: 'Cool'
-                });
-        </script> 
-    
+
 </body>
 
 </html>
