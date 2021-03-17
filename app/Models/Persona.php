@@ -9,6 +9,18 @@ class Persona extends Model
 {
     use HasFactory;
 
+
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'documento',
+        'nombre',
+    ];
+
+
     public function scopeDocumento($query, $documento){
 
         if($documento)

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+    
     <div id="contenedor">
         <div id="cabecera">
             <div id="left"><img id="posicionLe" src="img/centro_internacional_vacunas.png" alt=""></div>
@@ -21,7 +21,7 @@
         <div id="menu">
             <div>
                 <hr>
-                <strong>CÓDIGO:</strong> T4228100407
+                <strong>CÓDIGO:</strong> {{$personas->documento}}
                 <hr>
             </div>
 

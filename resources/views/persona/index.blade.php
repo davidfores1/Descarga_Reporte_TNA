@@ -44,7 +44,8 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">DOCUMENTO</th>
                                 <th scope="col">NOMBRE</th>
-                                <th scope="col">OPCIONES</th>
+                                <th scope="col">FECHA DE REGISTRO</th>
+                                <th colspan="3">OPCIONES</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,6 +54,7 @@
                                 <th>{{$persona->id}}</th>
                                 <td>{{$persona->documento}}</td>
                                 <td>{{$persona->nombre}}</td>
+                                <td>{{$persona->created_at}}</td>
                                 <td style="padding: 5px 0px 0px 0px">
 
                                     <a href="{{url('/persona/'.$persona->id.'/edit')}}" class="btn btn-info">Editar</a>

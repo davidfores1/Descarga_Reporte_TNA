@@ -8,7 +8,7 @@
             <div class="card">
                 <h6 class="dropdown-header">Menu</h6>
                 <a class="dropdown-item" href="{{url('home')}}">Pacientes</a>
-                <a class="dropdown-item" href="#">Usuarios</a>
+                <a class="dropdown-item" href="{{url('usuario')}}">Usuarios</a>
             </div>
         </div>
 
@@ -31,7 +31,7 @@
                                 <input type="text" class="form-control" name="nombre" placeholder="Nombre">
                             </div>
                             <button type="submit" class="btn btn-primary">Buscar</button>
-                            <a href="{{url('persona')}}" class="btn btn-success"
+                            <a href="{{url('usuario')}}" class="btn btn-success"
                                 style="float:left">Restablecer</a><br><br>
                         </form> <br><br><br>
 
@@ -56,7 +56,7 @@
                                 <td>{{$usuario->created_at}}</td>
                                 <td style="padding: 5px 0px 0px 0px">
 
-                                    <a href="#" class="btn btn-info">Editar</a>
+                                    <a href="{{url('/usuario/' . $usuario->id . '/edit')}}" class="btn btn-info">Editar</a>
 
                                     <form action="#" method="post" class="d-inline">
                                         @csrf

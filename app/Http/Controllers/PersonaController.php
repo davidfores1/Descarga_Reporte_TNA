@@ -45,8 +45,11 @@ class PersonaController extends Controller
      */
     public function store(Request $request)
     {
-        $datosPersona = request()->except('_token');
-        Persona::insert($datosPersona);
+        $datosPersona = new Persona();
+        $datosPersona->create([
+            'documento' => $request['documento'],
+            'nombre' => $request['nombre'],
+        ]);
         return redirect('persona')->with('crearPaciente','ok');
 
     }

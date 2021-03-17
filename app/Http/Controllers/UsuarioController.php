@@ -46,5 +46,20 @@ class UsuarioController extends Controller
         
     }
 
+    public function edit($id){
+
+        $usuario = User::findOrFail($id);
+        return view('usuario.edit',compact('usuario'));
+
+    }
+
+    public function update(Request $request, $id){
+
+        $datosUsuario = $request->except(['_token','_method']);
+        User::where('id','=',$id)->update($datosUsuario);
+        return redirect('usuario')->with('crearUsuario','ok');
+
+    }
+
 
 }
