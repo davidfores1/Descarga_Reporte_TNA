@@ -8,7 +8,9 @@
             <div class="card">
                 <h6 class="dropdown-header">Menu</h6>
                 <a class="dropdown-item" href="{{url('home')}}">Pacientes</a>
+                @if (auth()->user()->id_rol == 1 )
                 <a class="dropdown-item" href="{{url('usuario')}}">Usuarios</a>
+                @endif
             </div>
         </div>
 
@@ -19,9 +21,9 @@
                     <h3 class="card-title">Pacientes</h3>
                     <hr>
                     <div>
-                    
+                        @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)
                         <a href="{{url('persona/create')}}" class="btn btn-success" style="float:left">Nuevo</a>
-
+                        @endif
                         <!-- FORMULARIO -->
                         <form method="get" action="{{url('home')}}" class="form-inline" style="float:right">
 
@@ -57,6 +59,8 @@
                                 <td>{{$persona->created_at}}</td>
                                 <td style="padding: 5px 0px 0px 0px">
 
+                                    @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)
+
                                     <a href="{{url('/persona/'.$persona->id.'/edit')}}" class="btn btn-info">Editar</a>
 
                                     <form action="{{ url('/persona/'. $persona->id)}}" method="post" class="d-inline">
@@ -65,9 +69,8 @@
                                         <input type="submit" onclick="return confirm('Quieres Borrar')" value="Borrar"
                                             class="btn btn-danger">
                                     </form>
-
-                                    <a href="{{route('descargar',$persona->id)}}"
-                                        class="btn btn-success">Imprimir</a>
+                                    @endif
+                                    <a href="{{route('descargar',$persona->id)}}" class="btn btn-success">Imprimir</a>
 
                                 </td>
                             </tr>
@@ -83,4 +86,4 @@
 
     <div>
 
-    @endsection
+        @endsection

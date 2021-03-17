@@ -84,7 +84,7 @@
 
         <main class="py-4">
             @yield('content')
-            
+
             <!-- Crear usuario -->
             @if(session('crearUsuario') == 'ok')
 
@@ -92,6 +92,18 @@
             Swal.fire(
                 'registrado!',
                 'Usuario registrado.',
+                'success'
+            )
+            </script>
+            @endif
+
+            <!-- editar usuario -->
+            @if(session('editarUsuario') == 'ok')
+
+            <script>
+            Swal.fire(
+                'Editado!',
+                'Usuario editado.',
                 'success'
             )
             </script>
@@ -109,9 +121,9 @@
             </script>
             @endif
 
-             <!-- Editar Persona -->
+            <!-- Editar Persona -->
 
-             @if(session('editarPaciente') == 'ok')
+            @if(session('editarPaciente') == 'ok')
 
             <script>
             Swal.fire(

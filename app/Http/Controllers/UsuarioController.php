@@ -57,7 +57,7 @@ class UsuarioController extends Controller
 
         $datosUsuario = $request->except(['_token','_method']);
         User::where('id','=',$id)->update($datosUsuario);
-        return redirect('usuario')->with('crearUsuario','ok');
+        return redirect('usuario')->with('editarUsuario','ok');
 
     }
 
