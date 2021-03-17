@@ -10,16 +10,17 @@ class UsuarioController extends Controller
 {
     public function index(Request $request)
     {
-      
+
         $name = $request->get('name');
         $email = $request->get('email');
 
-        $usuarios = User::orderBy('id','ASC')
+        $usuarios = User::orderBy('id','ASC')   
         ->name($name)
         ->email($email)
         ->paginate(5);
     //    $datos['usuarios']=User::paginate(5);
     //     return view('usuario.index',$datos);
+   
         return view('usuario.index',compact('usuarios'));
     }
 
@@ -40,6 +41,7 @@ class UsuarioController extends Controller
         $usuario->create([
             'name' => $request['name'],
             'email' => $request['email'],
+            'id_rol' => $request['id_rol'],
             'password' => Hash::make($request['password']),
         ]);
         return redirect('usuario')->with('crearUsuario','ok');

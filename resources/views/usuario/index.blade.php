@@ -43,6 +43,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">NOMBRE</th>
                                 <th scope="col">USUARIO</th>
+                                <th scope="col">ROL</th>
                                 <th scope="col">FECHA DE REGISTRO</th>
                                 <th colspan="3">OPCIONES</th>
                             </tr>
@@ -53,6 +54,7 @@
                                 <th>{{$usuario->id}}</th>
                                 <td>{{$usuario->name}}</td>
                                 <td>{{$usuario->email}}</td>
+                                <td>{{$usuario->id_rol}}</td>
                                 <td>{{$usuario->created_at}}</td>
                                 <td style="padding: 5px 0px 0px 0px">
 

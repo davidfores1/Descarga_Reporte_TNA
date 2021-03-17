@@ -42,6 +42,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Rol') }}</label>
+
+                            <div class="col-md-6">
+                
+                                <select id="inputState" class="form-control" name="id_rol">
+                                    <option selected>Select...</option>
+                                    <option value="1">Super Usuario</option>
+                                    <option value="2">Administrador</option>
+                                    <option value="3">Estandar</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password"
                                 class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
