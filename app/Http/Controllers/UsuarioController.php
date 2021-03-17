@@ -8,19 +8,19 @@ use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
       
-        // $documento = $request->get('documento');
-        // $nombre = $request->get('nombre');
+        $name = $request->get('name');
+        $email = $request->get('email');
 
-        // $usuario = User::orderBy('id','ASC')
-        // ->documento($documento)
-        // ->nombre($nombre)
-        // ->paginate(3);
-       $datos['usuarios']=User::paginate(5);
-        return view('usuario.index',$datos);
-        // return view('persona.index',compact('usuarios'));
+        $usuarios = User::orderBy('id','ASC')
+        ->name($name)
+        ->email($email)
+        ->paginate(5);
+    //    $datos['usuarios']=User::paginate(5);
+    //     return view('usuario.index',$datos);
+        return view('usuario.index',compact('usuarios'));
     }
 
     public function showForm()
@@ -59,6 +59,11 @@ class UsuarioController extends Controller
         User::where('id','=',$id)->update($datosUsuario);
         return redirect('usuario')->with('crearUsuario','ok');
 
+    }
+
+    public function destroy($id){
+        User::destroy($id);
+        return redirect('usuario');
     }
 
 

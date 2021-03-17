@@ -28,13 +28,13 @@
             <div>
                 <div id="izquierda">
                 <strong>Nombre:</strong> {{$personas->nombre}}<br>
-                <strong>Tipo de muestra:</strong><br>
+                <strong>Tipo de muestra:</strong> {{$personas->id}}<br>
                 <strong>Solicitado por:</strong>
             </div>
                 <div id="derecha">
-                <strong>Fecha de recepción de la muestra:</strong><br>
-                <strong>Fecha de entrega de resultados:</strong><br>
-                <strong>Edad a la toma de muestra:</strong>
+                <strong>Fecha de recepción de la muestra:</strong> {{$personas->created_at}}<br> 
+                <strong>Fecha de entrega de resultados:</strong> {{$personas->created_at}}<br>
+                <strong>Edad a la toma de muestra:</strong> {{$personas->id}}
                 </div>
             </div>
         </div>

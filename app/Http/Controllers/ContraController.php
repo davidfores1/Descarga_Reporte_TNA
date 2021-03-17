@@ -12,6 +12,7 @@ class ContraController extends Controller
    
     if (Hash::check($request->contrasena,  '$2y$10$vml2vjR96hDCGpO1SESeA.qC2q31VftxVLA0r.CDc6SEumX1Hoq3K')) {
         $personas = Persona::all();
+        $personas = Persona::where("documento","=",$request->documento)->paginate(5);
         return view('cliente.tablaCliente',compact('personas'));
 
     }else{

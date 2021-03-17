@@ -22,8 +22,8 @@
                             <td>{{$persona->id}}</td>
                             <td>{{$persona->documento}}</td>
                             <td>{{$persona->nombre}}</td>
-                            <td>
-                                <a href="" class="btn btn-success">Imprimir</a><br><br>
+                            <td style="padding: 5px 0px 0px 0px">
+                                <a href="{{route('descargar',$persona->id)}}" class="btn btn-success">Imprimir</a><br><br>
                             </td>
                         </tr>
                         @endforeach

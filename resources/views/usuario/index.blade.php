@@ -22,13 +22,13 @@
                         <a href="{{route('registro')}}" class="btn btn-success" style="float:left">Nuevo</a>
 
                         <!-- FORMULARIO -->
-                        <form method="get" action="{{url('home')}}" class="form-inline" style="float:right">
+                        <form method="get" action="{{url('usuario')}}" class="form-inline" style="float:right">
 
                             <div class="form-group mx-sm-3">
-                                <input type="number" class="form-control" name="documento" placeholder="Documento">
+                                <input type="text" class="form-control" name="name" placeholder="Nombre">
                             </div>
                             <div class="form-group mx-sm-3">
-                                <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                                <input type="text" class="form-control" name="email" placeholder="Email">
                             </div>
                             <button type="submit" class="btn btn-primary">Buscar</button>
                             <a href="{{url('usuario')}}" class="btn btn-success"
@@ -58,14 +58,12 @@
 
                                     <a href="{{url('/usuario/' . $usuario->id . '/edit')}}" class="btn btn-info">Editar</a>
 
-                                    <form action="#" method="post" class="d-inline">
+                                    <form action="{{url('/usuario/' . $usuario->id)}}" method="post" class="d-inline">
                                         @csrf
                                         {{ method_field('DELETE') }}
                                         <input type="submit" onclick="return confirm('Quieres Borrar')" value="Borrar"
                                             class="btn btn-danger">
                                     </form>
-
-
                                 </td>
                             </tr>
                             @endforeach

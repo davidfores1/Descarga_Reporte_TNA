@@ -34,7 +34,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-auto">
                         <label class="sr-only" for="inlineFormInput">Identificación</label>
-                        <input type="text" class="form-control mb-2" id="identificación" placeholder="Identificación">
+                        <input type="number" class="form-control mb-2" id="identificación" name="documento" placeholder="Documento" required>
                     </div>
                     <div class="col-auto">
                         <label class="sr-only" for="inlineFormInput">Contraseña</label>

@@ -45,7 +45,7 @@
                                 <th scope="col">DOCUMENTO</th>
                                 <th scope="col">NOMBRE</th>
                                 <th scope="col">FECHA DE REGISTRO</th>
-                                <th colspan="3">OPCIONES</th>
+                                <th scope="col">OPCIONES</th>
                             </tr>
                         </thead>
                         <tbody>
