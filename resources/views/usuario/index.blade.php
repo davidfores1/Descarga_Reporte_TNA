@@ -1,10 +1,12 @@
+@if (auth()->user()->id_rol == 1 )
+
 @extends('layouts.app')
 @section('content')
 
 <div class="container-fluid">
 
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-2">
             <div class="card">
                 <h6 class="dropdown-header">Menu</h6>
                 <a class="dropdown-item" href="{{url('home')}}">Pacientes</a>
@@ -80,4 +82,12 @@
 
     <div>
 
-        @endsection
+@endsection
+
+@else
+
+<div style="text-align:center; padding: 40px">
+<h1>Error 404</h1>
+</div>
+
+@endif

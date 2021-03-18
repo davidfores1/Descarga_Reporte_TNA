@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-03-2021 a las 21:39:41
+-- Tiempo de generación: 18-03-2021 a las 16:04:37
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.15
 
@@ -62,6 +62,36 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `pacientes`
+--
+
+CREATE TABLE `pacientes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `documento` bigint(20) NOT NULL,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `pacientes`
+--
+
+INSERT INTO `pacientes` (`id`, `documento`, `nombre`, `created_at`, `updated_at`) VALUES
+(1, 54645678, 'David Forero', '2021-03-17 20:42:13', '2021-03-17 02:42:52'),
+(3, 54645678, 'David Forero', '2021-03-17 20:42:13', '2021-03-17 22:19:23'),
+(4, 23243234, 'Carlos Ramiro', '2021-03-17 20:42:13', '2021-03-10 23:23:07'),
+(5, 534543535, 'Angelica Pardo', '2021-03-17 20:42:13', '2021-03-17 02:40:55'),
+(6, 4354654666, 'Freddy Mer', '2021-03-17 20:42:13', '2021-03-10 02:06:09'),
+(7, 21312312, 'Ximena Carden', '2021-03-17 20:42:13', NULL),
+(8, 3424598734, 'Mario Mera', '2021-03-17 20:42:13', NULL),
+(10, 43545654, 'prueba', '2021-03-17 20:42:13', NULL),
+(14, 1235464, 'Carlos', '2021-03-17 20:42:13', '2021-03-17 23:29:30'),
+(15, 23243234, 'Carlos Ramiro', '2021-03-17 20:42:13', '2021-03-17 22:58:07');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `password_resets`
 --
 
@@ -77,36 +107,6 @@ CREATE TABLE `password_resets` (
 
 INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 ('prueba30@hotmail.es', '$2y$10$6PKzb7HrSPnIg99bf5wVfeSs16kJe4xwwOS7cZ2dcpMWSUd0tnhNG', '2021-03-17 01:18:09');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `personas`
---
-
-CREATE TABLE `personas` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `documento` bigint(20) NOT NULL,
-  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `personas`
---
-
-INSERT INTO `personas` (`id`, `documento`, `nombre`, `created_at`, `updated_at`) VALUES
-(1, 54645678, 'David Forero', '2021-03-17 20:42:13', '2021-03-17 02:42:52'),
-(3, 54645678, 'David Forero', '2021-03-17 20:42:13', '2021-03-17 22:19:23'),
-(4, 23243234, 'Carlos Ramiro', '2021-03-17 20:42:13', '2021-03-10 23:23:07'),
-(5, 534543535, 'Angelica Pardo', '2021-03-17 20:42:13', '2021-03-17 02:40:55'),
-(6, 4354654666, 'Freddy Mer', '2021-03-17 20:42:13', '2021-03-10 02:06:09'),
-(7, 21312312, 'Ximena Carden', '2021-03-17 20:42:13', NULL),
-(8, 3424598734, 'Mario Mera', '2021-03-17 20:42:13', NULL),
-(10, 43545654, 'prueba', '2021-03-17 20:42:13', NULL),
-(14, 1235464, 'Carlos', '2021-03-17 20:42:13', '2021-03-17 23:29:30'),
-(15, 23243234, 'Carlos Ramiro', '2021-03-17 20:42:13', '2021-03-17 22:58:07');
 
 -- --------------------------------------------------------
 
@@ -143,7 +143,7 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `id_rol` int(11) NOT NULL DEFAULT 1
+  `id_rol` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -151,9 +151,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `id_rol`) VALUES
-(1, 'Admin', 'Admin', NULL, '$2y$10$tgSRh92Bi9wtllYTPrCqzu4/nrZ.ra2mi9vRslRExZfDxqrnhZ6bi', '2Io59qg7OfrnlfCKC7YfKMTh7RiBrRhsoreECw0O0J5maSjfqFvcdZY3LXLY', '2021-03-09 02:27:10', '2021-03-17 20:03:21', 1),
+(1, 'Admin', 'Admin', NULL, '$2y$10$tgSRh92Bi9wtllYTPrCqzu4/nrZ.ra2mi9vRslRExZfDxqrnhZ6bi', 'GIbuHvIysiUTiZqQ9jW0nh6CE5eKCWGgqXjaWgfii7IuqI4CCRHBpfl0zAus', '2021-03-09 02:27:10', '2021-03-17 20:03:21', 1),
 (36, 'David', 'sistemas2@inmuno.org', NULL, '$2y$10$LPUkOVdXFgnjhFhaG6IB8OtLY961v4pls8zlcRDqeZVN5Nldi49rO', 'wB9TDvzTvVdht1EkjkEDwLo6RFYwCkZowUg5VZD28Ei5k0dk0F2UPgxh0qYF', '2021-03-16 20:24:49', '2021-03-18 01:00:00', 2),
-(38, 'Ximena', 'Ximena717@gmail.com', NULL, '$2y$10$FXJnVTce/96lSNhaLRjcNee3RMYJqZSaO1L4rFi308qfprPnK1SW.', 'lKgkomCLMNuvuyyhgbrw47wilhk8mfjr6RnzMBkyXLn6v9O6yvs7PyW8yKOL', '2021-03-17 01:32:26', '2021-03-18 01:04:59', 3);
+(38, 'Ximena', 'Ximena717@gmail.com', NULL, '$2y$10$TFDdrvR5JlDRKpURBgwBTejYCtvNOZbXvGiC0VEu8xk6SPIrzhmrC', 'Mmlxni7yURQYOjJULC9ZBV0LFVGGKQsT6rvuS54aZOJpgSKXlwZAo1ZBMqeP', '2021-03-17 01:32:26', '2021-03-18 19:46:54', 3);
 
 --
 -- Índices para tablas volcadas
@@ -173,16 +173,16 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `pacientes`
+--
+ALTER TABLE `pacientes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
-
---
--- Indices de la tabla `personas`
---
-ALTER TABLE `personas`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `roles`
@@ -215,10 +215,10 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `personas`
+-- AUTO_INCREMENT de la tabla `pacientes`
 --
-ALTER TABLE `personas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `pacientes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -230,7 +230,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- Restricciones para tablas volcadas
