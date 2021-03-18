@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Persona;
+use App\Models\Paciente;
 use Illuminate\Http\Request;
 
-class PersonaController extends Controller
+class PacienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +18,13 @@ class PersonaController extends Controller
         $documento = $request->get('documento');
         $nombre = $request->get('nombre');
 
-        $personas = Persona::orderBy('id','ASC')
+        $pacientes = Paciente::orderBy('id','ASC')
         ->documento($documento)
         ->nombre($nombre)
         ->paginate(5);
  //       $datos['personas']=Persona::paginate(5);
         //return view('persona.index',$datos);
-        return view('persona.index',compact('personas'));
+        return view('paciente.index',compact('pacientes'));
     }
 
     /**
@@ -34,7 +34,7 @@ class PersonaController extends Controller
      */
     public function create()
     {
-        return view('persona.create');
+        return view('paciente.create');
     }
 
     /**
@@ -45,22 +45,22 @@ class PersonaController extends Controller
      */
     public function store(Request $request)
     {
-        $datosPersona = new Persona();
-        $datosPersona->create([
+        $datosPacientes = new Paciente();
+        $datosPacientes->create([
             'documento' => $request['documento'],
             'nombre' => $request['nombre'],
         ]);
-        return redirect('persona')->with('crearPaciente','ok');
+        return redirect('paciente')->with('crearPaciente','ok');
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Persona  $persona
+     * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function show(Persona $persona)
+    public function show(Paciente $paciente)
     {
         //
     }
@@ -68,38 +68,38 @@ class PersonaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Persona  $persona
+     * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $persona = Persona::findOrFail($id);
-        return view('persona.edit',compact('persona'));
+        $paciente = Paciente::findOrFail($id);
+        return view('paciente.edit',compact('paciente'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Persona  $persona
+     * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request,$id)
     {
-        $datosPersona = request()->except(['_token','_method']);
-        Persona::where('id','=',$id)->update($datosPersona);
-        return redirect('persona')->with('editarPaciente','ok');
+        $datosPaciente = request()->except(['_token','_method']);
+        Paciente::where('id','=',$id)->update($datosPaciente);
+        return redirect('paciente')->with('editarPaciente','ok');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Persona  $persona
+     * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        Persona::destroy($id);
-        return redirect('persona');
+        Paciente::destroy($id);
+        return redirect('paciente');
     }
 }

@@ -22,7 +22,7 @@
                     <hr>
                     <div>
                         @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)
-                        <a href="{{url('persona/create')}}" class="btn btn-success" style="float:left">Nuevo</a>
+                        <a href="{{url('paciente/create')}}" class="btn btn-success" style="float:left">Nuevo</a>
                         @endif
                         <!-- FORMULARIO -->
                         <form method="get" action="{{url('home')}}" class="form-inline" style="float:right">
@@ -34,7 +34,7 @@
                                 <input type="text" class="form-control" name="nombre" placeholder="Nombre">
                             </div>
                             <button type="submit" class="btn btn-primary">Buscar</button>
-                            <a href="{{url('persona')}}" class="btn btn-success"
+                            <a href="{{url('paciente')}}" class="btn btn-success"
                                 style="float:left">Restablecer</a><br><br>
                         </form> <br><br><br>
 
@@ -51,26 +51,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($personas as $persona)
+                            @foreach($pacientes as $paciente)
                             <tr>
-                                <th>{{$persona->id}}</th>
-                                <td>{{$persona->documento}}</td>
-                                <td>{{$persona->nombre}}</td>
-                                <td>{{$persona->created_at}}</td>
+                                <th>{{$paciente->id}}</th>
+                                <td>{{$paciente->documento}}</td>
+                                <td>{{$paciente->nombre}}</td>
+                                <td>{{$paciente->created_at}}</td>
                                 <td style="padding: 5px 0px 0px 0px">
 
                                     @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)
 
-                                    <a href="{{url('/persona/'.$persona->id.'/edit')}}" class="btn btn-info">Editar</a>
+                                    <a href="{{url('/paciente/'.$paciente->id.'/edit')}}" class="btn btn-info">Editar</a>
 
-                                    <form action="{{ url('/persona/'. $persona->id)}}" method="post" class="d-inline">
+                                    <form action="{{ url('/paciente/'. $paciente->id)}}" method="post" class="d-inline">
                                         @csrf
                                         {{ method_field('DELETE') }}
                                         <input type="submit" onclick="return confirm('Quieres Borrar')" value="Borrar"
                                             class="btn btn-danger">
                                     </form>
                                     @endif
-                                    <a href="{{route('descargar',$persona->id)}}" class="btn btn-success">Imprimir</a>
+                                    <a href="{{route('descargar',$paciente->id)}}" class="btn btn-success">Imprimir</a>
 
                                 </td>
                             </tr>
@@ -78,7 +78,7 @@
                         </tbody>
                     </table>
                     <!-- PAGINACION -->
-                    {!! $personas->links() !!}
+                    {!! $pacientes->links() !!}
                 </div>
             </div>
         </div>

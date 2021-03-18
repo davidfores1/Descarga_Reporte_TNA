@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- estilo de para el pdf -->
     <link rel="stylesheet" href="css/descargaPDF.css">
+    
     <title>DescargarPDF</title>
 </head>
 
@@ -21,20 +24,20 @@
         <div id="menu">
             <div>
                 <hr>
-                <strong>CÓDIGO:</strong> {{$personas->documento}}
+                <strong>CÓDIGO:</strong> {{$pacientes->documento}}
                 <hr>
             </div>
 
             <div>
                 <div id="izquierda">
-                <strong>Nombre:</strong> {{$personas->nombre}}<br>
-                <strong>Tipo de muestra:</strong> {{$personas->id}}<br>
+                <strong>Nombre:</strong> {{$pacientes->nombre}}<br>
+                <strong>Tipo de muestra:</strong> {{$pacientes->id}}<br>
                 <strong>Solicitado por:</strong>
             </div>
                 <div id="derecha">
-                <strong>Fecha de recepción de la muestra:</strong> {{$personas->created_at}}<br> 
-                <strong>Fecha de entrega de resultados:</strong> {{$personas->created_at}}<br>
-                <strong>Edad a la toma de muestra:</strong> {{$personas->id}}
+                <strong>Fecha de recepción de la muestra:</strong> {{$pacientes->created_at}}<br> 
+                <strong>Fecha de entrega de resultados:</strong> {{$pacientes->created_at}}<br>
+                <strong>Edad a la toma de muestra:</strong> {{$pacientes->id}}
                 </div>
             </div>
         </div>

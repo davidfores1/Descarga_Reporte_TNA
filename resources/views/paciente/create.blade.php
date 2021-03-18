@@ -3,10 +3,10 @@
 
 <div class="container">
 
-<form method="post" action="{{url('/persona')}}">
+<form method="post" action="{{url('/paciente')}}">
   @csrf
 
-  @include('persona.form',['modo'=>'Crear'])
+  @include('paciente.form',['modo'=>'Crear'])
 </form>
 
 </div>

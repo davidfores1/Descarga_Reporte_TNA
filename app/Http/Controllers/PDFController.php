@@ -3,29 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Persona;
+use App\Models\Paciente;
 
 class PDFController extends Controller
 {
     public function show($id){
 
-        $personas = Persona::findOrFail($id);
+        $pacientes = Paciente::findOrFail($id);
 
-    
-
-        // if($personas->documento == 54645678){
-
-        //     $personas->documento = "img/Asoclinic.png";
-
-        // }else{
-
-        //     $personas->documento = "img/paypal.png";
-        // }
-
-
-        $pdf =\PDF::loadView('descargarPDF/descargarPDF',compact('personas'));
+        $pdf =\PDF::loadView('descargarPDF/descargarPDF',compact('pacientes'));
         $pdf -> setPaper ( 'A4' , 'landscape' );
-        return $pdf->download($personas->documento . '.pdf');
+        return $pdf->download($pacientes->documento . '.pdf');
 
        
     }

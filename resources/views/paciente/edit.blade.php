@@ -2,12 +2,12 @@
 @section('content')
 
 <div class="container">
-<form method="post" action="{{url('/persona/'.$persona->id)}}">
+<form method="post" action="{{url('/paciente/'.$paciente->id)}}">
 
 @csrf
 {{method_field('PATCH')}}
 
-@include('persona.form',['modo'=>'Editar'])
+@include('paciente.form',['modo'=>'Editar'])
 </form>
 
 </div>

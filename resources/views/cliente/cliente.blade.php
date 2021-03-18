@@ -14,7 +14,7 @@
      <!-- sweetalert2 -->
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <title>Descarga resultados TNS</title>
+    <title>Resultados TNA</title>
 </head>
 
 <body>
@@ -22,11 +22,11 @@
     <div class="container">
 
         <div class="col d-flex justify-content-center">
-            <img src="img/asoclinic1.png" alt="">
+            <img src="img/asoclinic.png" style="padding:30px">
         </div>
 
         <div class="col d-flex justify-content-center">
-            <h2>Descarga resultados TNS</h2>
+            <h2>Descarga resultados TNA</h2>
         </div>
 
         <div class="col d-flex justify-content-center" style="padding-left: 60px;">
@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-auto">
                         <label class="sr-only" for="inlineFormInput">Contraseña</label>
-                        <input type="password" class="form-control mb-2" id="contrase" name="contrasena"
+                        <input type="text" class="form-control mb-2" id="contrase" name="contrasena"
                             placeholder="Contraseña">
                     </div>
 

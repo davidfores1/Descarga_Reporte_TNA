@@ -16,14 +16,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($personas as $persona)
+                        @foreach($pacientes as $paciente)
 
                         <tr>
-                            <td>{{$persona->id}}</td>
-                            <td>{{$persona->documento}}</td>
-                            <td>{{$persona->nombre}}</td>
+                            <td>{{$paciente->id}}</td>
+                            <td>{{$paciente->documento}}</td>
+                            <td>{{$paciente->nombre}}</td>
                             <td style="padding: 5px 0px 0px 0px">
-                                <a href="{{route('descargar',$persona->id)}}" class="btn btn-success">Imprimir</a><br><br>
+                                <a href="{{route('descargar',$paciente->id)}}" class="btn btn-success">Imprimir</a><br><br>
                             </td>
                         </tr>
                         @endforeach
