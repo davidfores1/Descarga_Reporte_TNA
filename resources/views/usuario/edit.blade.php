@@ -1,3 +1,5 @@
+@if (auth()->user()->id_rol == 1 )
+
 @extends('layouts.app')
 
 @section('content')
@@ -58,3 +60,11 @@
 </div>
 
 @endsection
+
+@else
+
+<div style="text-align:center; padding: 40px">
+<h1>Error 404</h1>
+</div>
+
+@endif
