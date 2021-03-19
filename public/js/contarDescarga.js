@@ -22,6 +22,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
     axios.get('api/contarDescarga').then(res => {
 
+        location.reload();
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Descarga realizada',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
     }).catch(err => console.log(err))
 
 }

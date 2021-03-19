@@ -46,7 +46,7 @@
 
                     <div class="col-auto">
                         <button type="submit" class="btn btn-primary mb-2">Enviar</button>
-                        <a href="{{ url('/') }}" class="btn btn-primary mb-2">Admin</a>
+                        <a href="{{ url('/') }}" class="btn btn-info mb-2" style="color:white">Admin</a>
                     </div>
                 </div>
             </form>
