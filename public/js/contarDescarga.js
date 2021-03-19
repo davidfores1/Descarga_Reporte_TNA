@@ -14,7 +14,7 @@ botonDescargar.forEach((button) => {
 
 window.addEventListener('DOMContentLoaded', () => {
 
-  
+    cantDescarga();  
   
 })
 
@@ -36,4 +36,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
 }
 
-cantDescarga()
+
