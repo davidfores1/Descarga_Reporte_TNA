@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/cliente.css">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- <script src="js/bootstrap.min.js"></script> -->
 
      <!-- sweetalert2 -->
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+ <script src="{{ asset('js/contarDescarga.js') }}" defer></script>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <title>Resultados TNA</title>
 </head>

@@ -23,7 +23,7 @@
                             <td>{{$paciente->documento}}</td>
                             <td>{{$paciente->nombre}}</td>
                             <td style="padding: 5px 0px 0px 0px">
-                                <a href="{{route('descargar',$paciente->id)}}" class="btn btn-success">Imprimir</a><br><br>
+                                <a href="{{route('descargar',$paciente->id)}}" class="btn btn-success descargar">Descargar</a><br><br>
                             </td>
                         </tr>
                         @endforeach

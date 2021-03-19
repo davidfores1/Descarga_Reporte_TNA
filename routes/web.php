@@ -8,6 +8,7 @@ use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ContraseController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\ContarController;
 
 
 //ruta principal
@@ -45,3 +46,4 @@ Route::group(['middleware' => 'auth'], function () {
 // Rutas publicas
 Route::get('/validar', [ContraseController::class, 'ValidarC'])->name('validarCon');
 Route::get('/pdf/{id}', [PDFController::class, 'show'])->name('descargar');
+

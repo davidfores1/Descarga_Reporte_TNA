@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('contarDescarga', [ContarController::class, 'contarDescarga'])->name('contarDescarga');
+Route::get('mostrarCanDescarga', [ContarController::class, 'mostrarCanDescarga'])->name('mostrarCanDescarga');

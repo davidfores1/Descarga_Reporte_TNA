@@ -18,7 +18,13 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h3 class="card-title">Pacientes</h3>
+                    <div>
+                        <h3 class="card-title" style="float:left">Pacientes</h3>
+                        @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)
+                        <h6 class="text-success" style="float:right; margin: 5px 10px 15px 10px;"><a class="text-success" href="{{url('home')}}">Descargas: </a> <span id="num"></span></h6>
+                        @endif
+                    </div>
+                    <br>
                     <hr>
                     <div>
                         @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)
@@ -47,6 +53,7 @@
                                 <th scope="col">DOCUMENTO</th>
                                 <th scope="col">NOMBRE</th>
                                 <th scope="col">FECHA DE REGISTRO</th>
+                                <th scope="col">FECHA EDITADA</th>
                                 <th scope="col">OPCIONES</th>
                             </tr>
                         </thead>
@@ -57,11 +64,13 @@
                                 <td>{{$paciente->documento}}</td>
                                 <td>{{$paciente->nombre}}</td>
                                 <td>{{$paciente->created_at}}</td>
+                                <td>{{$paciente->updated_at}}</td>
                                 <td style="padding: 5px 0px 0px 0px">
 
                                     @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)
 
-                                    <a href="{{url('/paciente/'.$paciente->id.'/edit')}}" class="btn btn-info">Editar</a>
+                                    <a href="{{url('/paciente/'.$paciente->id.'/edit')}}"
+                                        class="btn btn-info">Editar</a>
 
                                     <form action="{{ url('/paciente/'. $paciente->id)}}" method="post" class="d-inline">
                                         @csrf
@@ -70,7 +79,8 @@
                                             class="btn btn-danger">
                                     </form>
                                     @endif
-                                    <a href="{{route('descargar',$paciente->id)}}" class="btn btn-success">Imprimir</a>
+                                    <a href="{{route('descargar',$paciente->id)}}"
+                                        class="btn btn-success descargar">Descargar</a>
 
                                 </td>
                             </tr>

@@ -102,4 +102,5 @@ class PacienteController extends Controller
         Paciente::destroy($id);
         return redirect('paciente');
     }
+
 }
