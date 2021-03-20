@@ -1,4 +1,3 @@
-
 var botonDescargar = document.querySelectorAll(".descargar");
 
 botonDescargar.forEach((button) => {
@@ -12,17 +11,11 @@ botonDescargar.forEach((button) => {
     });
 });
 
-window.addEventListener('DOMContentLoaded', () => {
 
-    cantDescarga();  
-  
-})
 
  function enviarController(contador){
 
     axios.get('api/contarDescarga').then(res => {
-
-        location.reload();
 
         Swal.fire({
             position: 'top-end',
@@ -36,14 +29,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
 }
 
-    const cantDescarga = async () => {
+const cantDescarga = async function(){
 
-    axios.get('api/mostrarCanDescarga').then(res => {
+     axios.get('api/mostrarCanDescarga').then(res => {
 
-        document.querySelector("#num").innerHTML = res.data
+        document.querySelector("#num").innerHTML  = res.data;
 
     }).catch(err => console.log(err))
 
 }
 
 
+cantDescarga();  

@@ -14,7 +14,6 @@ class PDFController extends Controller
         $pdf =\PDF::loadView('descargarPDF/descargarPDF',compact('pacientes'));
         $pdf -> setPaper ( 'A4' , 'landscape' );
         return $pdf->download($pacientes->documento . '.pdf');
-
        
     }
 
