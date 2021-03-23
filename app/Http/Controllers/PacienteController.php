@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Paciente;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PacientesImport;
 
 class PacienteController extends Controller
 {
@@ -101,6 +103,21 @@ class PacienteController extends Controller
     {
         Paciente::destroy($id);
         return redirect('paciente');
+    }
+
+    public function showCargarPacientes(){
+
+        return view('paciente.cargarPaciente');
+
+    }
+
+    public function importPacientes(Request $request){
+
+        $file = $request->file('file');
+        Excel::import(new PacientesImport, $file);
+
+        return redirect('paciente')->with('editarPaciente','ok');
+
     }
 
 }

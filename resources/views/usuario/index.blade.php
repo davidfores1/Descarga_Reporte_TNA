@@ -10,6 +10,7 @@
             <div class="card">
                 <h6 class="dropdown-header">Menu</h6>
                 <a class="dropdown-item" href="{{url('home')}}">Pacientes</a>
+                <a class="dropdown-item" href="{{url('cargarPacientes')}}">Cargar pacientes</a>
                 <a class="dropdown-item" href="{{url('usuario')}}">Usuarios</a>
             </div>
         </div>

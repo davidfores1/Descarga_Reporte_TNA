@@ -9,6 +9,7 @@
                 <h6 class="dropdown-header">Menu</h6>
                 <a class="dropdown-item" href="{{url('home')}}">Pacientes</a>
                 @if (auth()->user()->id_rol == 1 )
+                <a class="dropdown-item" href="{{url('cargarPacientes')}}">Cargar pacientes</a>
                 <a class="dropdown-item" href="{{url('usuario')}}">Usuarios</a>
                 @endif
             </div>
@@ -21,7 +22,8 @@
                     <div>
                         <h3 class="card-title" style="float:left">Pacientes</h3>
                         @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)
-                        <h6 class="text-success" style="float:right; margin: 5px 10px 15px 10px;"><a class="text-success" href="{{url('home')}}">Descargas: </a> <span id="num"></span></h6>
+                        <h6 class="text-success" style="float:right; margin: 5px 10px 15px 10px;"><a
+                                class="text-success" href="{{url('home')}}">Descargas: </a> <span id="num"></span></h6>
                         @endif
                     </div>
                     <br>
@@ -29,6 +31,7 @@
                     <div>
                         @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)
                         <a href="{{url('paciente/create')}}" class="btn btn-success" style="float:left">Nuevo</a>
+
                         @endif
                         <!-- FORMULARIO -->
                         <form method="get" action="{{url('home')}}" class="form-inline" style="float:right">

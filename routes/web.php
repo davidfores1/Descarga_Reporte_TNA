@@ -41,6 +41,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/registro', [UsuarioController::class, 'showForm'])->name('registro');
     //Crear registro de usuario nuevo
     Route::post('/crearR', [UsuarioController::class, 'create'])->name('crearR');
+
+    Route::get('/cargarPacientes', [PacienteController::class, 'showCargarPacientes'])->name('cargarPacientes');
+    Route::post('/importPacientes', [PacienteController::class, 'importPacientes'])->name('importPacientes');
 });
 
 // Rutas publicas
