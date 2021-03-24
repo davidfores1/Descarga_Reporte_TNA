@@ -61,7 +61,8 @@
                                 <td>{{$usuario->created_at}}</td>
                                 <td style="padding: 5px 0px 0px 0px">
 
-                                    <a href="{{url('/usuario/' . $usuario->id . '/edit')}}" class="btn btn-info">Editar</a>
+                                    <a href="{{url('/usuario/' . $usuario->id . '/edit')}}"
+                                        class="btn btn-info">Editar</a>
 
                                     <form action="{{url('/usuario/' . $usuario->id)}}" method="post" class="d-inline">
                                         @csrf
@@ -83,12 +84,12 @@
 
     <div>
 
-@endsection
+        @endsection
 
-@else
+        @else
 
-<div style="text-align:center; padding: 40px">
-<h1>Error 404</h1>
-</div>
+        <div style="text-align:center; padding: 40px">
+            <h1>Error 404</h1>
+        </div>
 
-@endif
+        @endif

@@ -135,6 +135,19 @@
             )
             </script>
             @endif
+
+            <!-- Cargar pacientes -->
+
+            @if(session('cargarPacientes') == 'ok')
+
+            <script>
+            Swal.fire(
+                'Cargados!',
+                'Pacientes cargados.',
+                'success'
+            )
+            </script>
+            @endif
         </main>
 
     </div>

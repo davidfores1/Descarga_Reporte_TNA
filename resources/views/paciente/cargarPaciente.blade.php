@@ -25,7 +25,7 @@
                     <br>
                     <hr>
                     <div>
-                   <a href="">Descargar plantilla</a>
+                   <a href="{{url('exportPacientes')}}">Descargar plantilla</a>
                     </div>
 
                     <div>
@@ -41,14 +41,11 @@
                             </form>
                         </div>
                         @endif
-
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
     <div>
 
-        @endsection
+ @endsection

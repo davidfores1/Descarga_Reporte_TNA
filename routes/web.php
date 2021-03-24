@@ -41,9 +41,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/registro', [UsuarioController::class, 'showForm'])->name('registro');
     //Crear registro de usuario nuevo
     Route::post('/crearR', [UsuarioController::class, 'create'])->name('crearR');
-
+    
+    //Cargar archivo excel
     Route::get('/cargarPacientes', [PacienteController::class, 'showCargarPacientes'])->name('cargarPacientes');
+    //Importar archivo excel como plantilla para cargar datos del paciente
     Route::post('/importPacientes', [PacienteController::class, 'importPacientes'])->name('importPacientes');
+
+    Route::GET('/exportPacientes', [PacienteController::class, 'exportPacientes'])->name('exportPacientes');
 });
 
 // Rutas publicas

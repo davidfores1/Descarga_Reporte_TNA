@@ -6,6 +6,7 @@ use App\Models\Paciente;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\PacientesImport;
+use App\Exports\PacientesExportar;
 
 class PacienteController extends Controller
 {
@@ -116,8 +117,13 @@ class PacienteController extends Controller
         $file = $request->file('file');
         Excel::import(new PacientesImport, $file);
 
-        return redirect('paciente')->with('editarPaciente','ok');
+        return redirect('paciente')->with('cargarPacientes','ok');
 
     }
+
+    public function exportPacientes() 
+{
+    return Excel::download(new PacientesExportar, 'Plantillla.xlsx');
+}
 
 }
