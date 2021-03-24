@@ -18,6 +18,7 @@ use App\Http\Controllers\ContarController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+//cuenta  descargas , al momento de dar clic en descargar se gerena el evento
 Route::get('contarDescarga', [ContarController::class, 'contarDescarga'])->name('contarDescarga');
+//muestra la suma de toda las descargas
 Route::get('mostrarCanDescarga', [ContarController::class, 'mostrarCanDescarga'])->name('mostrarCanDescarga');

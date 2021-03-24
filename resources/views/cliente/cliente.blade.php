@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- <script src="js/bootstrap.min.js"></script> -->
 
-     <!-- sweetalert2 -->
- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- sweetalert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
- <script src="{{ asset('js/contarDescarga.js') }}" defer></script>
- <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{{ asset('js/contarDescarga.js') }}" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <title>Resultados TNA</title>
 </head>
@@ -36,7 +36,8 @@
                 <div class="form-row align-items-center">
                     <div class="col-auto">
                         <label class="sr-only" for="inlineFormInput">Identificación</label>
-                        <input type="number" class="form-control mb-2" id="identificación" name="documento" placeholder="Documento" required>
+                        <input type="number" class="form-control mb-2" id="identificación" name="documento"
+                            placeholder="Documento" required>
                     </div>
                     <div class="col-auto">
                         <label class="sr-only" for="inlineFormInput">Contraseña</label>
@@ -56,17 +57,28 @@
 
     @yield('tablaCliente')
 
- 
+
     @if(session('validarPaciente') == 'ok')
 
-        <script >
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Contraseña incorrecta!',
-        })
+    <script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Contraseña incorrecta!',
+    })
     </script>
-   @endif
+    @endif
+
+    @if(session('noRegistroPaciente') == 'ok')
+
+    <script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No hay registro del Paciente',
+    })
+    </script>
+    @endif
 </body>
 
 </html>
