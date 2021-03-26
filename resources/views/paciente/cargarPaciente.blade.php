@@ -26,9 +26,23 @@
                     <hr>
 
                     @if(isset($numRows))
-                    <div class="alert alert-info">
-                        Se importaron {{$numRows}} registros.
-                    </div>
+
+
+                    <script>
+                        swal.fire({
+                                title: "Cargados!",
+                                text: '¡Se importaron ' + {{$numRows}} +' registros!',
+                                type: "success",
+                                confirmButtonText: "OK"
+                            }).then(okay => {
+                                if (okay) {
+                                window.location.href = "cargarPacientes";
+                                }
+                            });
+         
+                    </script>
+
+
                     @endif
                     <div>
                         <a href="{{url('exportPacientes')}}">Descargar plantilla</a>
