@@ -115,15 +115,20 @@ class PacienteController extends Controller
     public function importPacientes(Request $request){
 
         $file = $request->file('file');
-        Excel::import(new PacientesImport, $file);
+        $import = new PacientesImport;
+        $import->import($file);
 
-        return redirect('paciente')->with('cargarPacientes','ok');
+        if($import->failures()->isNotEmpty()){
+            return back()->withFailures($import->failures());
+        }
+
+        return view('paciente.cargarPaciente',['numRows'=>$import->getRowCount()]);
 
     }
 
     public function exportPacientes() 
-{
+    {
     return Excel::download(new PacientesExportar, 'Plantillla.xlsx');
-}
+    }
 
 }

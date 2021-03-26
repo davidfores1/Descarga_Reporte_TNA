@@ -71,11 +71,20 @@
 
     @if(session('noRegistroPaciente') == 'ok')
 
+
+
     <script>
+
     Swal.fire({
         icon: 'error',
-        title: 'Oops...',
+        title: 'Lo siento',
         text: 'No hay registro del Paciente',
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
     })
     </script>
     @endif

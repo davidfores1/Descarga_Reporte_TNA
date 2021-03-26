@@ -24,8 +24,14 @@
                     </div>
                     <br>
                     <hr>
+
+                    @if(isset($numRows))
+                    <div class="alert alert-info">
+                        Se importaron {{$numRows}} registros.
+                    </div>
+                    @endif
                     <div>
-                   <a href="{{url('exportPacientes')}}">Descargar plantilla</a>
+                        <a href="{{url('exportPacientes')}}">Descargar plantilla</a>
                     </div>
 
                     <div>
@@ -39,6 +45,46 @@
                                 <button class="btn btn-success">Cargar</button>
 
                             </form>
+
+                            <div class="card-body">
+                                @if ($errors->any())
+                                <div class="alert alert-info">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                @endif
+
+                                @if(session()->has('failures'))
+
+                                <table class="table table-danger">
+                                    <tr>
+                                        <th>Fila</th>
+                                        <th>Campo</th>
+                                        <th>Error</th>
+                                        <th>Valor Error</th>
+                                    </tr>
+                                    @foreach(session()->get('failures') as $validar)
+                                    <tr>
+                                        <td>{{$validar->row()}}</td>
+                                        <td>{{$validar->attribute()}}</td>
+                                        <td>
+                                            <ul>
+                                                @foreach($validar->errors() as $e)
+                                                <li>{{$e}}</li>
+                                                @endforeach
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            {{$validar->values()[$validar->attribute()]}}
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </table>
+                                @endif
+                            </div>
                         </div>
                         @endif
                     </div>
@@ -48,4 +94,4 @@
     </div>
     <div>
 
- @endsection
+        @endsection

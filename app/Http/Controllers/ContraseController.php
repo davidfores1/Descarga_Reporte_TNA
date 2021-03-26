@@ -22,7 +22,9 @@ class ContraseController extends Controller
         }  
 
     }else{
+
       return redirect('cliente')->with('validarPaciente','ok');
+      
     }
   }
 }
