@@ -7,22 +7,13 @@ use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithValidation;
-use Maatwebsite\Excel\Concerns\SkipsOnError;
-use Maatwebsite\Excel\Concerns\SkipsErrors;
-use Maatwebsite\Excel\Concerns\SkipsOnFailure;
-use Maatwebsite\Excel\Concerns\SkipsFailures;
 use Maatwebsite\Excel\Validators\Failure;
 
-class PacientesImport implements 
-ToModel, 
-WithHeadingRow, 
-SkipsOnError, 
-WithValidation, 
-SkipsOnFailure
+class PacientesImport implements ToModel,WithHeadingRow,WithValidation
 {
     private $numRows = 0;
 
-    use Importable, SkipsErrors, SkipsFailures;
+    use Importable;
 
     public function rules(): array
 {

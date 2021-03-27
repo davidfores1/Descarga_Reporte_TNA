@@ -27,7 +27,6 @@
 
                     @if(isset($numRows))
 
-
                     <script>
                         swal.fire({
                                 title: "Cargados!",
@@ -78,7 +77,6 @@
                                         <th>Fila</th>
                                         <th>Campo</th>
                                         <th>Error</th>
-                                        <th>Valor Error</th>
                                     </tr>
                                     @foreach(session()->get('failures') as $validar)
                                     <tr>
@@ -90,9 +88,6 @@
                                                 <li>{{$e}}</li>
                                                 @endforeach
                                             </ul>
-                                        </td>
-                                        <td>
-                                            {{$validar->values()[$validar->attribute()]}}
                                         </td>
                                     </tr>
                                     @endforeach

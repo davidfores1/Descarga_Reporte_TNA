@@ -118,10 +118,6 @@ class PacienteController extends Controller
         $import = new PacientesImport;
         $import->import($file);
 
-        if($import->failures()->isNotEmpty()){
-            return back()->withFailures($import->failures());
-        }
-
         return view('paciente.cargarPaciente',['numRows'=>$import->getRowCount()]);
 
     }
