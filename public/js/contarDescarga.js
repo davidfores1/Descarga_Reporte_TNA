@@ -23,7 +23,11 @@ botonDescargar.forEach((button) => {
             title: 'Descarga realizada',
             showConfirmButton: false,
             timer: 1500
-          })
+          }).then(okay => {
+            if (okay) {
+                location.reload();
+            }
+        });
 
     }).catch(err => console.log(err))
 
