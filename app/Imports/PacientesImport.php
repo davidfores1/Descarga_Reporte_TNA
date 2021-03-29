@@ -18,8 +18,11 @@ class PacientesImport implements ToModel,WithHeadingRow,WithValidation
     public function rules(): array
 {
     return [
+        '*.cod_interno' => 'required|unique:pacientes,cod_interno',
         'documento' => 'required|int',
         'nombre' => 'required',
+        'edad' => 'required|int',
+        'fecha_recepcion'  => 'required'
     ];
 }
     /**
@@ -32,8 +35,11 @@ class PacientesImport implements ToModel,WithHeadingRow,WithValidation
 
         ++$this->numRows;
         return new Paciente([
+            'cod_interno'  => $row['cod_interno'],
             'documento'  => $row['documento'],
-            'nombre' => $row['nombre']
+            'nombre' => $row['nombre'],
+            'edad'  => $row['edad'],
+            'fecha_recepcion'  => $row['fecha_recepcion']
         ]);
     }
     

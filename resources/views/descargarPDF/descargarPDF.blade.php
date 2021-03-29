@@ -24,20 +24,20 @@
         <div id="menu">
             <div>
                 <hr>
-                <strong>CÓDIGO:</strong> {{$pacientes->documento}}
+                <strong>CÓDIGO:</strong> {{$pacientes->cod_interno}}
                 <hr>
             </div>
 
             <div>
                 <div id="izquierda">
                 <strong>Nombre:</strong> {{$pacientes->nombre}}<br>
-                <strong>Tipo de muestra:</strong> {{$pacientes->id}}<br>
+                <strong>Tipo de muestra:</strong> Sangre Papel Filtro<br>
                 <strong>Solicitado por:</strong>
             </div>
                 <div id="derecha">
-                <strong>Fecha de recepción de la muestra:</strong> {{$pacientes->created_at}}<br> 
+                <strong>Fecha de recepción de la muestra:</strong> {{$pacientes->fecha_recepcion}}<br> 
                 <strong>Fecha de entrega de resultados:</strong> {{$pacientes->created_at}}<br>
-                <strong>Edad a la toma de muestra:</strong> {{$pacientes->id}}
+                <strong>Edad a la toma de muestra:</strong> {{$pacientes->edad}} Dias
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@
 <div class="container-fluid">
 
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-12">
             <div class="card">
                 <h6 class="dropdown-header">Menu</h6>
                 <a class="dropdown-item" href="{{url('home')}}">Pacientes</a>
@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <div class="col-sm-9">
+        <div class="col-sm-12">
             <div class="card">
                 <div class="card-body">
 
@@ -53,10 +53,12 @@
                         <thead class="table-active">
                             <tr>
                                 <th scope="col">ID</th>
+                                <th scope="col">COD INTERNO</th>
                                 <th scope="col">DOCUMENTO</th>
                                 <th scope="col">NOMBRE</th>
+                                <th scope="col">EDAD</th>
+                                <th scope="col">FECHA RECEPCIÓN</th>
                                 <th scope="col">FECHA DE REGISTRO</th>
-                                <th scope="col">FECHA EDITADA</th>
                                 <th scope="col">OPCIONES</th>
                             </tr>
                         </thead>
@@ -64,10 +66,12 @@
                             @foreach($pacientes as $paciente)
                             <tr>
                                 <th>{{$paciente->id}}</th>
+                                <th>{{$paciente->cod_interno}}</th>
                                 <td>{{$paciente->documento}}</td>
                                 <td>{{$paciente->nombre}}</td>
+                                <td>{{$paciente->edad}}</td>
+                                <td>{{$paciente->fecha_recepcion}}</td>
                                 <td>{{$paciente->created_at}}</td>
-                                <td>{{$paciente->updated_at}}</td>
                                 <td style="padding: 5px 0px 0px 0px">
 
                                     @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)

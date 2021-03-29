@@ -16,8 +16,11 @@ class Paciente extends Model
      * @var array
      */
     protected $fillable = [
+        'cod_interno',
         'documento',
         'nombre',
+        'edad',
+        'fecha_recepcion'
     ];
 
 

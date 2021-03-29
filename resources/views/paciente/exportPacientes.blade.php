@@ -1,12 +1,15 @@
 <table>
     <thead>
-    <tr>
-        <th>Documento</th>
-        <th>Nombre</th>
-    </tr>
+        <tr>
+            <th>Cod. Interno</th>
+            <th>Documento Paciente</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Fecha de recepcion</th>
+        </tr>
     </thead>
     <tbody>
- 
+
         <tr>
             <td></td>
             <td></td>
