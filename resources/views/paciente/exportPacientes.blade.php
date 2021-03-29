@@ -1,16 +1,21 @@
 <table>
     <thead>
         <tr>
-            <th>Cod. Interno</th>
-            <th>Documento Paciente</th>
+            <th>cod Interno</th>
+            <th>Documento</th>
             <th>Nombre</th>
             <th>Edad</th>
-            <th>Fecha de recepcion</th>
+            <th>Fecha_recepcion</th>
+            <th>Hospital</th>
         </tr>
     </thead>
     <tbody>
 
         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>

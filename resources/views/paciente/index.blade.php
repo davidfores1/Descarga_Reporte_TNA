@@ -52,26 +52,26 @@
                     <table class="table">
                         <thead class="table-active">
                             <tr>
-                                <th scope="col">ID</th>
                                 <th scope="col">COD INTERNO</th>
                                 <th scope="col">DOCUMENTO</th>
                                 <th scope="col">NOMBRE</th>
                                 <th scope="col">EDAD</th>
                                 <th scope="col">FECHA RECEPCIÓN</th>
                                 <th scope="col">FECHA DE REGISTRO</th>
+                                <th scope="col">Hospital</th>
                                 <th scope="col">OPCIONES</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($pacientes as $paciente)
                             <tr>
-                                <th>{{$paciente->id}}</th>
                                 <th>{{$paciente->cod_interno}}</th>
                                 <td>{{$paciente->documento}}</td>
                                 <td>{{$paciente->nombre}}</td>
                                 <td>{{$paciente->edad}}</td>
                                 <td>{{$paciente->fecha_recepcion}}</td>
                                 <td>{{$paciente->created_at}}</td>
+                                <td>{{$paciente->hospital}}</td>
                                 <td style="padding: 5px 0px 0px 0px">
 
                                     @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)

@@ -22,7 +22,8 @@ class PacientesImport implements ToModel,WithHeadingRow,WithValidation
         'documento' => 'required|int',
         'nombre' => 'required',
         'edad' => 'required|int',
-        'fecha_recepcion'  => 'required'
+        'fecha_recepcion'  => 'required',
+        'hospital'  => 'required'
     ];
 }
     /**
@@ -39,7 +40,8 @@ class PacientesImport implements ToModel,WithHeadingRow,WithValidation
             'documento'  => $row['documento'],
             'nombre' => $row['nombre'],
             'edad'  => $row['edad'],
-            'fecha_recepcion'  => $row['fecha_recepcion']
+            'fecha_recepcion'  => $row['fecha_recepcion'],
+            'hospital'  => $row['hospital']
         ]);
     }
     

@@ -20,7 +20,8 @@ class Paciente extends Model
         'documento',
         'nombre',
         'edad',
-        'fecha_recepcion'
+        'fecha_recepcion',
+        'hospital'
     ];
 
 

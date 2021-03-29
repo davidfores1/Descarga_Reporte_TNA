@@ -124,7 +124,7 @@ class PacienteController extends Controller
 
     public function exportPacientes() 
     {
-    return Excel::download(new PacientesExportar, 'Plantillla.csv');
+    return Excel::download(new PacientesExportar, 'Plantillla.xlsx');
     }
 
 }

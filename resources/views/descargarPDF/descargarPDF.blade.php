@@ -8,17 +8,17 @@
 
     <!-- estilo de para el pdf -->
     <link rel="stylesheet" href="css/descargaPDF.css">
-    
+
     <title>DescargarPDF</title>
 </head>
 
 <body>
-    
+
     <div id="contenedor">
         <div id="cabecera">
             <div id="left"><img id="posicionLe" src="img/centro_internacional_vacunas.png" alt=""></div>
             <div id="center"><img id="cent" src="img/Asoclinic.png" alt=""></div>
-            <div id="right"><img id="posicionRi" src="img/sanjose_buga.png" alt=""></div>
+            <div id="right"><img id="posicionRi" src="{{$pacientes->hospital}}" alt=""></div>
         </div>
 
         <div id="menu">
@@ -30,17 +30,18 @@
 
             <div>
                 <div id="izquierda">
-                <strong>Nombre:</strong> {{$pacientes->nombre}}<br>
-                <strong>Tipo de muestra:</strong> Sangre Papel Filtro<br>
-                <strong>Solicitado por:</strong>
-            </div>
+                    <strong>Nombre:</strong> {{$pacientes->nombre}}<br>
+                    <strong>Tipo de muestra:</strong> Sangre Papel Filtro<br>
+                    <strong>Solicitado por:</strong>
+                </div>
                 <div id="derecha">
-                <strong>Fecha de recepción de la muestra:</strong> {{$pacientes->fecha_recepcion}}<br> 
-                <strong>Fecha de entrega de resultados:</strong> {{$pacientes->created_at}}<br>
-                <strong>Edad a la toma de muestra:</strong> {{$pacientes->edad}} Dias
+                    <strong>Fecha de recepción de la muestra:</strong> {{$pacientes->fecha_recepcion}}<br>
+                    <strong>Fecha de entrega de resultados:</strong> {{$pacientes->created_at}}<br>
+                    <strong>Edad a la toma de muestra:</strong> {{$pacientes->edad}} Dias
                 </div>
             </div>
         </div>
+        <br>
         <hr>
         <div id="contexto">
 
