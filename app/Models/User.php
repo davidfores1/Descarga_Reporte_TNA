@@ -45,7 +45,7 @@ class User extends Authenticatable
     public function scopeName($query, $name){
 
         if($name){
-        return $query->join("roles as roll", "users.id_rol", "=", "roll.id")->select("users.id","users.name", "users.email","roll.rol as id_rol","users.created_at")->where('name',$name);
+        return $query->join("roles as roll", "users.id_rol", "=", "roll.id")->select("users.id","users.name", "users.email","roll.rol as id_rol","users.created_at")->where('name','LIKE', "%$name%");
     }else{
        
         
@@ -56,7 +56,7 @@ class User extends Authenticatable
     public function scopeEmail($query, $email){
 
         if($email){
-        return $query->join("roles as roll", "users.id_rol", "=", "roll.id")->select("users.id","users.name","users.email","roll.rol as id_rol","users.created_at")->where('email',$email);
+        return $query->join("roles as roll", "users.id_rol", "=", "roll.id")->select("users.id","users.name","users.email","roll.rol as id_rol","users.created_at")->where('email','LIKE', "%$email%");
 
     }else{
        

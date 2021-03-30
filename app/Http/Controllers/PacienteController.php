@@ -17,11 +17,12 @@ class PacienteController extends Controller
      */
     public function index(Request $request)
     {
-      
+        $cod_interno = $request->get('cod_interno');
         $documento = $request->get('documento');
         $nombre = $request->get('nombre');
 
         $pacientes = Paciente::orderBy('id','ASC')
+        ->cod_interno($cod_interno)
         ->documento($documento)
         ->nombre($nombre)
         ->paginate(5);

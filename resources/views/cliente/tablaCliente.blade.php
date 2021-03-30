@@ -9,7 +9,7 @@
                 <table class="table" id="none">
                     <thead class="table-active">
                         <tr>
-                            <th scope="col">ID</th>
+                            <th scope="col">COD INTERNO</th>
                             <th scope="col">DOCUMENTO</th>
                             <th scope="col">NOMBRE</th>
                             <th scope="col">OPCIONES</th>
@@ -19,7 +19,7 @@
                         @foreach($pacientes as $paciente)
 
                         <tr>
-                            <td>{{$paciente->id}}</td>
+                            <td>{{$paciente->cod_interno}}</td>
                             <td>{{$paciente->documento}}</td>
                             <td>{{$paciente->nombre}}</td>
                             <td style="padding: 5px 0px 0px 0px">

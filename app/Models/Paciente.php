@@ -24,11 +24,16 @@ class Paciente extends Model
         'hospital'
     ];
 
+    public function scopeCod_interno($query, $codInterno){
+
+        if($codInterno)
+        return $query->where('cod_interno','LIKE', "%$codInterno%");
+    }
 
     public function scopeDocumento($query, $documento){
 
         if($documento)
-        return $query->where('documento',$documento);
+        return $query->where('documento','LIKE', "%$documento%");
     }
 
     public function scopeNombre($query, $nombre){
@@ -36,4 +41,5 @@ class Paciente extends Model
         if($nombre)
         return $query->where('nombre','LIKE', "%$nombre%");
     }
+    
 }

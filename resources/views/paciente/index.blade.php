@@ -26,10 +26,14 @@
                         <!-- FORMULARIO -->
                         <form method="get" action="{{url('home')}}" class="form-inline" style="float:right">
 
-                            <div class="form-group mx-sm-3">
+                            <div class="form-group mx-sm-2">
+                                <input type="text" class="form-control" name="cod_interno" placeholder="Cod Interno">
+                            </div>
+
+                            <div class="form-group mx-sm-2">
                                 <input type="number" class="form-control" name="documento" placeholder="Documento">
                             </div>
-                            <div class="form-group mx-sm-3">
+                            <div class="form-group mx-sm-2">
                                 <input type="text" class="form-control" name="nombre" placeholder="Nombre">
                             </div>
                             <button type="submit" class="btn btn-primary">Buscar</button>
@@ -93,4 +97,4 @@
 
     <div>
 
-@endsection
+        @endsection
