@@ -36,7 +36,8 @@
                 </div>
                 <div id="derecha">
                     <strong>Fecha de recepción de la muestra:</strong> {{$pacientes->fecha_recepcion}}<br>
-                    <strong>Fecha de entrega de resultados:</strong> {{$pacientes->created_at}}<br>
+                    <strong>Fecha de entrega de resultados:</strong>
+                    {{$pacientes->created_at->isoFormat('DD/MM/YYYY')}}<br>
                     <strong>Edad a la toma de muestra:</strong> {{$pacientes->edad}} Dias
                 </div>
             </div>
@@ -51,7 +52,7 @@
             <p>El tamizaje para defectos de oxidación de ácidos grasos es más sensible en recién nacidos menores de una
                 semana de edad y no es tan confiable en niños mayores.</p>
             <img src="img/firma.png" alt=""><br>
-            Myriam Arévalo R PhD <br>Fecha: 23 Febrero 2021 TC: 3399-87
+            Myriam Arévalo R PhD <br>Fecha: {{$fechaActual->formatLocalized('%d %B %Y')}} TC: 3399-87
 
         </div>
 

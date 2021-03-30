@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paciente;
+use Carbon\Carbon;
 
 class PDFController extends Controller
 {
@@ -28,8 +29,9 @@ class PDFController extends Controller
             $pacientes->hospital = "img/palmira.png";
         }
 
+        $fechaActual = Carbon::now();
 
-        $pdf =\PDF::loadView('descargarPDF/descargarPDF',compact('pacientes'));
+        $pdf =\PDF::loadView('descargarPDF/descargarPDF',compact('pacientes' , 'fechaActual'));
         $pdf -> setPaper ( 'A4' , 'landscape' );
         return $pdf->download($pacientes->documento . '.pdf');
        
