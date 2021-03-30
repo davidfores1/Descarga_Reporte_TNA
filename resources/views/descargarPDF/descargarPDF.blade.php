@@ -36,8 +36,7 @@
                 </div>
                 <div id="derecha">
                     <strong>Fecha de recepción de la muestra:</strong> {{$pacientes->fecha_recepcion}}<br>
-                    <strong>Fecha de entrega de resultados:</strong>
-                    {{$pacientes->created_at->isoFormat('DD/MM/YYYY')}}<br>
+                    <strong>Fecha de entrega de resultados:</strong> {{$pacientes->created_at->isoFormat('DD/MM/YYYY')}}<br>
                     <strong>Edad a la toma de muestra:</strong> {{$pacientes->edad}} Dias
                 </div>
             </div>

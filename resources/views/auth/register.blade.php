@@ -48,8 +48,8 @@
 
                             <div class="col-md-6">
                 
-                                <select id="inputState" class="form-control" name="id_rol">
-                                    <option value="3" selected>Select...</option>
+                                <select id="inputState" class="form-control" name="id_rol" required>
+                                    <option value="" selected>Select...</option>
                                     <option value="1">Super Usuario</option>
                                     <option value="2">Administrador</option>
                                     <option value="3">Estandar</option>

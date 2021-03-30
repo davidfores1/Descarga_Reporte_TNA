@@ -42,4 +42,5 @@ class Paciente extends Model
         return $query->where('nombre','LIKE', "%$nombre%");
     }
     
+    
 }
