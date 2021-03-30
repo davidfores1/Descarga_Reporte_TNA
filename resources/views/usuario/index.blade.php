@@ -30,7 +30,7 @@
 
                     </div>
                     <!-- TABLA -->
-                    <table class="table">
+                    <table class="table table-hover">
                         <thead class="table-active">
                             <tr>
                                 <th scope="col">ID</th>
