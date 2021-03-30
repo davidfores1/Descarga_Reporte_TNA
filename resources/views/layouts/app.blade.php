@@ -7,8 +7,8 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>TNA</title>
+    <link rel="icon" href="img/tittle.png">
 
     <!-- Menu CSS -->
     <link rel="stylesheet" href="{{ asset('css/menu.css') }}" defer>
