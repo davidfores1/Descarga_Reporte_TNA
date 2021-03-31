@@ -51,8 +51,12 @@ class PacienteController extends Controller
     {
         $datosPacientes = new Paciente();
         $datosPacientes->create([
+            'cod_interno' => $request['cod_interno'],
             'documento' => $request['documento'],
             'nombre' => $request['nombre'],
+            'edad' => $request['edad'],
+            'fecha_recepcion' => $request['fecha_recepcion'],
+            'hospital' => $request['hospital'],
         ]);
         return redirect('paciente')->with('crearPaciente','ok');
 
