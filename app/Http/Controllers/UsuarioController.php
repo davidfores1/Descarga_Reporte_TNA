@@ -23,7 +23,8 @@ class UsuarioController extends Controller
    
         return view('usuario.index',compact('usuarios'));
     }
-
+     
+    // Redireciona a la vista de registro que se encuentra en la carpeta Auth
     public function showForm()
     {
         return view('Auth.register');
@@ -31,6 +32,7 @@ class UsuarioController extends Controller
 
     public function create(Request $request)
     {
+        // valida si exite el registro
         $v = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],

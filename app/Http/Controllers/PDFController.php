@@ -12,6 +12,7 @@ class PDFController extends Controller
 
         $pacientes = Paciente::findOrFail($id);
 
+        // validacion, segun el valor del campo hospital, se ,muestra imagen de la clinica en el resultado descargado
         if(($pacientes->hospital == "B") || ($pacientes->hospital == "b")){
 
             $pacientes->hospital = "img/buenaventura.png";
@@ -28,9 +29,9 @@ class PDFController extends Controller
 
             $pacientes->hospital = "img/palmira.png";
         }
-
+        // fecha actual
         $fechaActual = Carbon::now();
-
+        // descarga el resultado en pdf
         $pdf =\PDF::loadView('descargarPDF/descargarPDF',compact('pacientes' , 'fechaActual'));
         $pdf -> setPaper ( 'A4' , 'landscape' );
         return $pdf->download($pacientes->documento . '.pdf');

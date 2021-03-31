@@ -1,10 +1,15 @@
+
+// selecciona toda las clases del boton descargar
 var botonDescargar = document.querySelectorAll(".descargar");
+
 
 botonDescargar.forEach((button) => {
     button.addEventListener("click", () => {
         botonDescargar.forEach((button) => {
+            // elimoma toda las clases del boton descargar
             button.classList.remove("descargar");
         });
+        // asigna clase a la etiqueta o boton descargar, solo al boton que se realizo el clic
         button.classList.toggle("descargar");
         var contador = 1
         enviarController(contador)
@@ -15,6 +20,7 @@ botonDescargar.forEach((button) => {
 
  function enviarController(contador){
 
+    // enviar peticion al routes/api.php
     axios.get('api/contarDescarga').then(res => {
 
         Swal.fire({
@@ -33,6 +39,7 @@ botonDescargar.forEach((button) => {
 
 }
 
+// enviar peticion al routes/api.php
 const cantDescarga = async function(){
 
      axios.get('api/mostrarCanDescarga').then(res => {

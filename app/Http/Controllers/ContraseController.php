@@ -18,6 +18,7 @@ class ContraseController extends Controller
         if(count($pacientes)>0){
            return view('cliente.tablaCliente',compact('pacientes'));
         }else{
+          // Si no exite o no tiene resultado, retorna un mensaje
            return redirect('cliente')->with('noRegistroPaciente','ok');
         }  
 

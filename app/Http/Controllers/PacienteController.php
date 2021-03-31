@@ -17,6 +17,8 @@ class PacienteController extends Controller
      */
     public function index(Request $request)
     {
+
+        //para poder filtrar, query scope metodos del modelo estan en la espera, si no hay filtro retorna todo los datos 
         $cod_interno = $request->get('cod_interno');
         $documento = $request->get('documento');
         $nombre = $request->get('nombre');
@@ -47,9 +49,11 @@ class PacienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     //crea el registro paciente
     public function store(Request $request)
     {
-
+        // valida si exite el registro
         $validated = $request->validate([
             'cod_interno' => 'required|unique:pacientes',
         ]);
@@ -116,6 +120,7 @@ class PacienteController extends Controller
         return redirect('paciente');
     }
 
+    // ver vista Cargar Pacientes
     public function showCargarPacientes(){
 
         return view('paciente.cargarPaciente');
@@ -131,7 +136,8 @@ class PacienteController extends Controller
         return view('paciente.cargarPaciente',['numRows'=>$import->getRowCount()]);
 
     }
-
+     
+    //metodo para descargar plantilla para el cargue
     public function exportPacientes() 
     {
     return Excel::download(new PacientesExportar, 'Plantillla.xlsx');
