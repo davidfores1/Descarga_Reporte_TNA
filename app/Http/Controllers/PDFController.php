@@ -12,19 +12,19 @@ class PDFController extends Controller
 
         $pacientes = Paciente::findOrFail($id);
 
-        if($pacientes->hospital == "B"){
+        if(($pacientes->hospital == "B") || ($pacientes->hospital == "b")){
 
             $pacientes->hospital = "img/buenaventura.png";
 
-        }elseif($pacientes->hospital == "C"){
+        }elseif(($pacientes->hospital == "C") || ($pacientes->hospital == "c")){
 
             $pacientes->hospital = "img/cali.png";
 
-        }elseif($pacientes->hospital == "BU"){
+        }elseif(($pacientes->hospital == "BU") || ($pacientes->hospital == "bu" or $pacientes->hospital == "Bu")){
 
             $pacientes->hospital = "img/buga.png";
 
-        }elseif($pacientes->hospital == "P"){
+        }elseif(($pacientes->hospital == "P") || ($pacientes->hospital == "p")){
 
             $pacientes->hospital = "img/palmira.png";
         }

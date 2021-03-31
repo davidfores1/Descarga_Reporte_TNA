@@ -7,6 +7,7 @@
             <th>Edad</th>
             <th>Fecha_recepcion</th>
             <th>Hospital</th>
+            <th style="color:red">La Fecha_recepcion debe ser formato fecha ejemplo 31/03/2021 </th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
             <td></td>
             <td></td>
             <td></td>
+            <td style="color:red">Para Hospita colocar: B = Buenaventura, C = Cali, BU = Buga, P = Palmira</td>
         </tr>
 
     </tbody>
