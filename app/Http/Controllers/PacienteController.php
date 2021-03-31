@@ -49,6 +49,11 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validated = $request->validate([
+            'cod_interno' => 'required|unique:pacientes',
+        ]);
+
         $datosPacientes = new Paciente();
         $datosPacientes->create([
             'cod_interno' => $request['cod_interno'],

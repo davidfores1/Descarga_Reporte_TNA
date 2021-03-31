@@ -9,8 +9,15 @@
             <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Cod interno') }}</label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="documento" name="cod_interno"
+                        <input type="text" class="form-control @error('cod_interno') is-invalid @enderror" id="documento" name="cod_interno"
                             value="{{isset($paciente->documento)?$paciente->cod_interno:''}}" placeholder="Cod interno">
+
+                            @error('cod_interno')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+
                     </div>
                 </div>
 
