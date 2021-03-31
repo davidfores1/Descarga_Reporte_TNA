@@ -21,7 +21,7 @@ class PacienteController extends Controller
         $documento = $request->get('documento');
         $nombre = $request->get('nombre');
 
-        $pacientes = Paciente::orderBy('id','ASC')
+        $pacientes = Paciente::orderBy('cod_interno','ASC')
         ->cod_interno($cod_interno)
         ->documento($documento)
         ->nombre($nombre)
