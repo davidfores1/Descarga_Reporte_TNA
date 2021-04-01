@@ -27,7 +27,7 @@ class UsuarioController extends Controller
     // Redireciona a la vista de registro que se encuentra en la carpeta Auth
     public function showForm()
     {
-        return view('Auth.register');
+        return view('auth.register');
     }
 
     public function create(Request $request)
