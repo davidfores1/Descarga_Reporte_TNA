@@ -24,7 +24,7 @@
     <div class="container">
 
         <div class="col d-flex justify-content-center">
-            <img src="img/asoclinic.png" style="padding:30px">
+            <img src="{!! asset('img/asoclinic.png') !!}" style="padding:30px">
         </div>
 
         <div class="col d-flex justify-content-center">
