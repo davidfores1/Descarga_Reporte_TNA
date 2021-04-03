@@ -28,7 +28,7 @@ botonDescargar.forEach((button) => {
             icon: 'success',
             title: 'Descarga realizada',
             showConfirmButton: false,
-            timer: 1500
+            timer: 1000
           }).then(okay => {
             if (okay) {
                 location.reload();
@@ -40,7 +40,7 @@ botonDescargar.forEach((button) => {
 }
 
 // enviar peticion al routes/api.php
-const cantDescarga = async function(){
+const cantDescarga = function(){
 
      axios.get('api/mostrarCanDescarga').then(res => {
 
