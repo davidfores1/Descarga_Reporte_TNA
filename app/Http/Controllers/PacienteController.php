@@ -56,6 +56,11 @@ class PacienteController extends Controller
         // valida si exite el registro
         $validated = $request->validate([
             'cod_interno' => 'required|unique:pacientes',
+            'documento' => 'required|int',
+            'nombre' => 'required',
+            'edad' => 'required|int',
+            'fecha_recepcion' => 'required',
+            'hospital' => 'required'
         ]);
 
         $datosPacientes = new Paciente();

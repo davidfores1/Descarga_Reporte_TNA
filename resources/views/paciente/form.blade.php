@@ -10,7 +10,7 @@
                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Cod interno') }}</label>
                     <div class="col-md-6">
                         <input type="text" class="form-control @error('cod_interno') is-invalid @enderror" id="documento" name="cod_interno"
-                            value="{{isset($paciente->documento)?$paciente->cod_interno:''}}" placeholder="Cod interno">
+                            value="{{isset($paciente->documento)?$paciente->cod_interno:''}}" placeholder="Cod interno" required>
 
                             @error('cod_interno')
                                 <span class="invalid-feedback" role="alert">
@@ -25,14 +25,14 @@
                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Documento') }}</label>
                     <div class="col-md-6">
                         <input type="number" class="form-control" id="documento" name="documento"
-                            value="{{isset($paciente->documento)?$paciente->documento:''}}" placeholder="Documento">
+                            value="{{isset($paciente->documento)?$paciente->documento:''}}" placeholder="Documento" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
                     <div class="col-md-6">
                         <input type="text" class="form-control" id="nombre" name="nombre"
-                            value="{{isset($paciente->nombre)?$paciente->nombre:''}}" placeholder="Nombre">
+                            value="{{isset($paciente->nombre)?$paciente->nombre:''}}" placeholder="Nombre" required>
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                     <label for="edad" class="col-md-4 col-form-label text-md-right">{{ __('Edad') }}</label>
                     <div class="col-md-6">
                         <input type="text" class="form-control" id="nombre" name="edad"
-                            value="{{isset($paciente->nombre)?$paciente->edad:''}}" placeholder="Edad">
+                            value="{{isset($paciente->nombre)?$paciente->edad:''}}" placeholder="Edad" required>
                     </div>
                 </div>
 
@@ -48,7 +48,7 @@
                     <label for="fecha_recepcion" class="col-md-4 col-form-label text-md-right">{{ __('Fecha de recepción') }}</label>
                     <div class="col-md-6">
                         <input type="date" class="form-control" id="nombre" name="fecha_recepcion"
-                            value="{{isset($paciente->nombre)?$paciente->fecha_recepcion:''}}" placeholder="fecha_recepcion">
+                            value="{{isset($paciente->nombre)?$paciente->fecha_recepcion:''}}" placeholder="fecha_recepcion" required>
                     </div>
                 </div>
 
