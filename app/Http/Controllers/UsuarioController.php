@@ -14,7 +14,7 @@ class UsuarioController extends Controller
         $name = $request->get('name');
         $email = $request->get('email');
 
-        $usuarios = User::orderBy('id','ASC')   
+        $usuarios = User::orderBy('created_at','ASC')   
         ->name($name)
         ->email($email)
         ->paginate(5);

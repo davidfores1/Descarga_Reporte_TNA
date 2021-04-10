@@ -21,7 +21,8 @@ class Paciente extends Model
         'nombre',
         'edad',
         'fecha_recepcion',
-        'hospital'
+        'hospital',
+        'usuario_sistema'
     ];
 
     public function scopeCod_interno($query, $codInterno){

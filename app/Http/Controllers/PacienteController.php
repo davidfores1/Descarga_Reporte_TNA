@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paciente;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\PacientesImport;
@@ -23,7 +24,7 @@ class PacienteController extends Controller
         $documento = $request->get('documento');
         $nombre = $request->get('nombre');
 
-        $pacientes = Paciente::orderBy('cod_interno','ASC')
+        $pacientes = Paciente::orderBy('created_at','DESC')
         ->cod_interno($cod_interno)
         ->documento($documento)
         ->nombre($nombre)
@@ -53,6 +54,9 @@ class PacienteController extends Controller
      //crea el registro paciente
     public function store(Request $request)
     {
+
+        $user = Auth::user();
+        $usuario = $user->name;
         // valida si exite el registro
         $validated = $request->validate([
             'cod_interno' => 'required|unique:pacientes',
@@ -60,7 +64,7 @@ class PacienteController extends Controller
             'nombre' => 'required',
             'edad' => 'required|int',
             'fecha_recepcion' => 'required',
-            'hospital' => 'required'
+            'hospital' => 'required',
         ]);
 
         $datosPacientes = new Paciente();
@@ -71,6 +75,7 @@ class PacienteController extends Controller
             'edad' => $request['edad'],
             'fecha_recepcion' => $request['fecha_recepcion'],
             'hospital' => $request['hospital'],
+            'usuario_sistema' => $usuario
         ]);
         return redirect('paciente')->with('crearPaciente','ok');
 

@@ -34,7 +34,7 @@
                     <div>
                         <a href="{{url('exportPacientes')}}">Descargar plantilla</a>
                     </div>
-
+<br>
                     <div>
                         @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)
 
@@ -43,6 +43,9 @@
                                 @csrf
 
                                 <input type="file" class="form-control" name="file" required><br>
+
+                                <strong><p>Por favor Cargar el archivo en formato de excel ejemplo.csv</p></strong>
+                                
                                 <button class="btn btn-success">Cargar</button>
 
                             </form>
@@ -56,30 +59,6 @@
                                         @endforeach
                                     </ul>
                                 </div>
-                                @endif
-
-                                @if(session()->has('failures'))
-
-                                <table class="table table-danger">
-                                    <tr>
-                                        <th>Fila</th>
-                                        <th>Campo</th>
-                                        <th>Error</th>
-                                    </tr>
-                                    @foreach(session()->get('failures') as $validar)
-                                    <tr>
-                                        <td>{{$validar->row()}}</td>
-                                        <td>{{$validar->attribute()}}</td>
-                                        <td>
-                                            <ul>
-                                                @foreach($validar->errors() as $e)
-                                                <li>{{$e}}</li>
-                                                @endforeach
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </table>
                                 @endif
                             </div>
                         </div>

@@ -47,8 +47,8 @@
                 <div class="form-group row">
                     <label for="fecha_recepcion" class="col-md-4 col-form-label text-md-right">{{ __('Fecha de recepción') }}</label>
                     <div class="col-md-6">
-                        <input type="date" class="form-control" id="nombre" name="fecha_recepcion"
-                            value="{{isset($paciente->nombre)?$paciente->fecha_recepcion:''}}" placeholder="fecha_recepcion" required>
+                        <input type="text" class="form-control" id="nombre" name="fecha_recepcion"
+                            value="{{isset($paciente->fecha_recepcion)?$paciente->fecha_recepcion:''}}" placeholder="Ejemplo 01/12/2021" required>
                     </div>
                 </div>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-04-2021 a las 16:06:34
+-- Tiempo de generación: 10-04-2021 a las 19:16:14
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.15
 
@@ -86,6 +86,7 @@ CREATE TABLE `pacientes` (
   `edad` int(11) NOT NULL,
   `fecha_recepcion` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `hospital` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `usuario_sistema` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -153,9 +154,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `id_rol`) VALUES
-(1, 'Admin', 'Admin', NULL, '$2y$10$tgSRh92Bi9wtllYTPrCqzu4/nrZ.ra2mi9vRslRExZfDxqrnhZ6bi', 'Ppx3znY6D5SiZa7cVNfppwEz3JWqakmx3F98bDv4OwZ8SIvaEMxSWAYUddIf', '2021-03-09 02:27:10', '2021-03-17 20:03:21', 1),
-(36, 'David', 'sistemas2@inmuno.org', NULL, '$2y$10$rBcD5jXDRIHZbgKjx1FwE.mANTbyKEk9vrrBtni9i4sfCxlY67Jhm', 'WLvjbR5rV0UQnEWYKDdVJj4Be0Aeuzh6n6lFQSMIGZqO2xIcZEXMoCjS2WU0', '2021-03-16 20:24:49', '2021-03-19 17:01:15', 2),
-(38, 'Ximena', 'Ximena717@gmail.com', NULL, '$2y$10$tgSRh92Bi9wtllYTPrCqzu4/nrZ.ra2mi9vRslRExZfDxqrnhZ6bi', 'StseJK8h0jM89s5xkraSPOVSC4BnfSsECpwnHGQzeSXGy8LhtV6RfI2S1DE6', '2021-03-17 01:32:26', '2021-03-18 19:46:54', 3);
+(1, 'Admin', 'Admin', NULL, '$2y$10$tgSRh92Bi9wtllYTPrCqzu4/nrZ.ra2mi9vRslRExZfDxqrnhZ6bi', 'yaisZS37PxBI29UM8SqfuBXLpSma1aW1DD8g3XJspQbl9YJ89iDgpqKhKdFB', '2021-03-09 02:27:10', '2021-03-17 20:03:21', 1),
+(36, 'David Forero', 'sistemas2@inmuno.org', NULL, '$2y$10$rBcD5jXDRIHZbgKjx1FwE.mANTbyKEk9vrrBtni9i4sfCxlY67Jhm', 'Dqpx2t5huaMU2odOlkOGxhFTmbEoRU6hlfzHUP7FHbC0alW0aPF1wQjQByRL', '2021-03-16 20:24:49', '2021-04-10 15:48:06', 2),
+(38, 'Ximena', 'Ximena717@gmail.com', NULL, '$2y$10$tgSRh92Bi9wtllYTPrCqzu4/nrZ.ra2mi9vRslRExZfDxqrnhZ6bi', 'sBkYAmhaQVa9UtvV85yPQYfQnISMUE7hBlAoYm9WU52lgmsOdGYtyZnk0Qjh', '2021-03-17 01:32:26', '2021-03-18 19:46:54', 3);
 
 --
 -- Índices para tablas volcadas

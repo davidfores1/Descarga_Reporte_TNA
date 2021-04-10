@@ -3,6 +3,7 @@
 namespace App\Imports;
 
 use App\Models\Paciente;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
@@ -26,6 +27,7 @@ class PacientesImport implements ToModel,WithHeadingRow,WithValidation
         'hospital'  => 'required'
     ];
 }
+
     /**
     * @param array $row
     *
@@ -34,6 +36,9 @@ class PacientesImport implements ToModel,WithHeadingRow,WithValidation
     public function model(array $row)
     {
 
+        $user = Auth::user();
+        $usuario = $user->name;
+
         ++$this->numRows;
         return new Paciente([
             'cod_interno'  => $row['cod_interno'],
@@ -41,7 +46,8 @@ class PacientesImport implements ToModel,WithHeadingRow,WithValidation
             'nombre' => $row['nombre'],
             'edad'  => $row['edad'],
             'fecha_recepcion'  => $row['fecha_recepcion'],
-            'hospital'  => $row['hospital']
+            'hospital'  => $row['hospital'],
+            'usuario_sistema' => $usuario,
         ]);
     }
     

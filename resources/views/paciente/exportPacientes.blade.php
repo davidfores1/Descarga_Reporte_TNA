@@ -7,7 +7,7 @@
             <th>Edad</th>
             <th>Fecha_recepcion</th>
             <th>Hospital</th>
-            <th style="color:red">La Fecha_recepcion debe ser formato fecha ejemplo 31/03/2021 </th>
+            <th style="color:red">La Fecha_recepcion debe ser formato fecha ejemplo 20/07/2021 </th>
         </tr>
     </thead>
     <tbody>

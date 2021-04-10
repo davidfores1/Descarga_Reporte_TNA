@@ -8,6 +8,9 @@
     <link rel="icon" href="img/tittle.png">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- font -->
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}" defer>
     <!-- <script src="js/bootstrap.min.js"></script> -->
 
     <!-- sweetalert2 -->
@@ -47,7 +50,7 @@
 
                     <div class="col-auto">
                         <button type="submit" class="btn btn-primary mb-2">Enviar</button>
-                        <a href="{{ url('/') }}" class="btn btn-info mb-2" style="color:white">Admin</a>
+                        <a href="{{ url('/cliente') }}" class="btn btn-danger mb-2" style="color:white"><i class="fas fa-sign-out-alt"></i>Salir</a>
                     </div>
                 </div>
             </form>
@@ -74,7 +77,6 @@
 
 
     <script>
-
     Swal.fire({
         icon: 'error',
         title: 'Lo siento',

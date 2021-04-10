@@ -28,7 +28,7 @@ botonDescargar.forEach((button) => {
             icon: 'success',
             title: 'Descarga realizada',
             showConfirmButton: false,
-            timer: 1000
+            timer: 2000
           }).then(okay => {
             if (okay) {
                 location.reload();

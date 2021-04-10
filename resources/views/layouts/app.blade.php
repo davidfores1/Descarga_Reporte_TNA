@@ -13,6 +13,8 @@
     <!-- Menu CSS -->
     <link rel="stylesheet" href="{{ asset('css/menu.css') }}" defer>
     </link>
+   <!-- font -->
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}" defer>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -73,9 +75,12 @@
                                     Menu
                                 </a>
                                 <div class="dropdown-content">
-                                    <a class="dropdown-item" href="{{url('home')}}">Pacientes</a>
-                                    @if (auth()->user()->id_rol == 1 )
+                                    <a class="dropdown-item" href="{{url('home')}}">Resultados pacientes</a>
+                                    @if (auth()->user()->id_rol == 1 or auth()->user()->id_rol == 2 )
                                     <a class="dropdown-item" href="{{url('cargarPacientes')}}">Cargar pacientes</a>
+                                    @endif
+
+                                    @if (auth()->user()->id_rol == 1 )
                                     <a class="dropdown-item" href="{{url('usuario')}}">Usuarios</a>
                                     @endif
                                 </div>
