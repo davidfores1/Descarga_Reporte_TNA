@@ -36,7 +36,7 @@
                             <div class="form-group mx-sm-2">
                                 <input type="text" class="form-control" name="nombre" placeholder="Nombre">
                             </div>
-                            <button type="submit" class="btn btn-primary">Buscar</button>
+                            <button type="submit" class="btn btn-primary" style="margin: 5px;"><i class="fas fa-search"></i></button>
                             <a href="{{url('paciente')}}" class="btn btn-success"
                                 style="float:left">Restablecer</a><br><br>
                         </form> <br><br><br>
