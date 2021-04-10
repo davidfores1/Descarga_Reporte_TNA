@@ -32,7 +32,7 @@
 
                     @endif
                     <div>
-                        <a href="{{url('exportPacientes')}}">Descargar plantilla</a>
+                        <a href="{{url('exportPacientes')}}" ><i class="fas fa-file-export" style="width:20x"></i>Descargar plantilla</a>
                     </div>
 <br>
                     <div>
