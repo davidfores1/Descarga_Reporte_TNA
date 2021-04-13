@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    <!-- Plantilla del pdf -->
     <div id="contenedor">
         <div id="cabecera">
             <div id="left"><img id="posicionLe" src="img/centro_internacional_vacunas.png" alt=""></div>

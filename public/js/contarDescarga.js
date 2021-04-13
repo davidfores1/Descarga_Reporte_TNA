@@ -43,7 +43,7 @@ botonDescargar.forEach((button) => {
 const cantDescarga = function(){
 
      axios.get('api/mostrarCanDescarga').then(res => {
-
+        // Retrona peticion
         document.querySelector("#num").innerHTML  = res.data;
 
     }).catch(err => console.log(err))

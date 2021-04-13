@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+<!-- form.blade.php -->
 <div class="container">
 <form method="post" action="{{url('/paciente/'.$paciente->id)}}">
 

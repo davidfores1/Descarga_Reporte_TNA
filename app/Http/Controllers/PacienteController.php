@@ -29,8 +29,6 @@ class PacienteController extends Controller
         ->documento($documento)
         ->nombre($nombre)
         ->paginate(5);
- //       $datos['personas']=Persona::paginate(5);
-        //return view('persona.index',$datos);
         return view('paciente.index',compact('pacientes'));
     }
 
@@ -57,7 +55,7 @@ class PacienteController extends Controller
 
         $user = Auth::user();
         $usuario = $user->name;
-        // valida si exite el registro
+        // valida datos
         $validated = $request->validate([
             'cod_interno' => 'required|unique:pacientes',
             'documento' => 'required|int',
@@ -67,6 +65,7 @@ class PacienteController extends Controller
             'hospital' => 'required',
         ]);
 
+        //crear datos
         $datosPacientes = new Paciente();
         $datosPacientes->create([
             'cod_interno' => $request['cod_interno'],
@@ -98,6 +97,8 @@ class PacienteController extends Controller
      * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
+
+     //se envia el id, obtener los registros del cliente o paciente seleccionado
     public function edit($id)
     {
         $paciente = Paciente::findOrFail($id);
@@ -111,6 +112,8 @@ class PacienteController extends Controller
      * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
+
+    //  editar paciente seleccionado, recibe el id y sus demas campos
     public function update(Request $request,$id)
     {
         $datosPaciente = request()->except(['_token','_method']);
@@ -124,6 +127,8 @@ class PacienteController extends Controller
      * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
+
+    // Eliminar paciente o cliente seleccionado
     public function destroy($id)
     {
         Paciente::destroy($id);
@@ -137,6 +142,7 @@ class PacienteController extends Controller
 
     }
 
+    // Importar pacientes que son cargados por el archivo excel.csv
     public function importPacientes(Request $request){
 
         $file = $request->file('file');
@@ -147,7 +153,7 @@ class PacienteController extends Controller
 
     }
      
-    //metodo para descargar plantilla para el cargue
+    //metodo para descargar plantilla para el cargue, este archivo se debe guardar con extencion .csv
     public function exportPacientes() 
     {
     return Excel::download(new PacientesExportar, 'Plantillla.xlsx');

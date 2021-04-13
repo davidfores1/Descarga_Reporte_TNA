@@ -1,3 +1,4 @@
+<!-- Para crear paciente ruta: views/auth/register.blade.php -->
 @if (auth()->user()->id_rol == 1 )
 
 @extends('layouts.app')
@@ -64,7 +65,7 @@
 @else
 
 <div style="text-align:center; padding: 40px">
-<h1>Error 404</h1>
+<h1>Error 403 </h1>
 </div>
 
 @endif

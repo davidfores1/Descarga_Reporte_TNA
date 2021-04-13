@@ -16,6 +16,7 @@ class ContraseController extends Controller
         $pacientes = Paciente::where("documento","=",$request->documento)->paginate(5);
 
         if(count($pacientes)>0){
+          //si hay resultado muestra la tabla con registro del paciente o cliente
            return view('cliente.tablaCliente',compact('pacientes'));
         }else{
           // Si no exite o no tiene resultado, retorna un mensaje
@@ -23,7 +24,7 @@ class ContraseController extends Controller
         }  
 
     }else{
-
+       // si el paciente o cliente no existe
       return redirect('cliente')->with('validarPaciente','ok');
       
     }

@@ -1,7 +1,8 @@
 <?php
 
 // Desarrollador: David Forero
-// Version 1.0 31/03/2021
+// Version 1.1 31/03/2021
+// https://github.com/davidfores1?tab=repositories
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PacienteController;

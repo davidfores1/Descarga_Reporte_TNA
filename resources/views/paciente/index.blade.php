@@ -1,10 +1,8 @@
 @extends('layouts.app')
 @section('content')
-
+<!-- Vista principal de pacientes -->
 <div class="container-fluid">
-
     <div class="row">
-
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-body">
@@ -19,8 +17,10 @@
                     <br>
                     <hr>
                     <div>
+
                         @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)
-                        <a href="{{url('paciente/create')}}" class="btn btn-success" style="float:left">Nuevo registro</a>
+                        <a href="{{url('paciente/create')}}" class="btn btn-success" style="float:left">Nuevo
+                            registro</a>
 
                         @endif
                         <!-- FORMULARIO -->
@@ -36,7 +36,8 @@
                             <div class="form-group mx-sm-2">
                                 <input type="text" class="form-control" name="nombre" placeholder="Nombre">
                             </div>
-                            <button type="submit" class="btn btn-primary" style="margin: 5px;"><i class="fas fa-search"></i></button>
+                            <button type="submit" class="btn btn-primary" style="margin: 5px;"><i
+                                    class="fas fa-search"></i></button>
                             <a href="{{url('paciente')}}" class="btn btn-success"
                                 style="float:left">Restablecer</a><br><br>
                         </form> <br><br><br>
@@ -72,8 +73,8 @@
 
                                     @if (auth()->user()->id_rol == 1 || auth()->user()->id_rol == 2)
 
-                                    <a href="{{url('/paciente/'.$paciente->id.'/edit')}}"
-                                        class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="{{url('/paciente/'.$paciente->id.'/edit')}}" class="btn btn-info"><i
+                                            class="fas fa-pencil-alt"></i></a>
 
                                     <form action="{{ url('/paciente/'. $paciente->id)}}" method="post" class="d-inline">
                                         @csrf
@@ -82,8 +83,8 @@
                                             class="btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
                                     </form>
                                     @endif
-                                    <a href="{{route('descargar',$paciente->id)}}"
-                                        class="btn btn-success descargar"><i class="fas fa-file-download"></i></a>
+                                    <a href="{{route('descargar',$paciente->id)}}" class="btn btn-success descargar"><i
+                                            class="fas fa-file-download"></i></a>
 
                                 </td>
                             </tr>

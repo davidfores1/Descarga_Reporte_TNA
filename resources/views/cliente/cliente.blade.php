@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/tittle.png">
 
+    <!-- bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- font -->
@@ -16,7 +17,10 @@
     <!-- sweetalert2 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+    <!-- javascript para realizar el contedo de descargas -->
     <script src="{{ asset('js/contarDescarga.js') }}" defer></script>
+
+    <!-- Libreria de javascript (axios) para realizar peticiones  -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <title>Resultados TNA</title>
@@ -35,13 +39,16 @@
         </div>
 
         <div class="col d-flex justify-content-center" style="padding-left: 60px;">
+        <!-- Formulario-->
             <form method="get" action="{{url('/validar')}}">
                 <div class="form-row align-items-center">
+                   
                     <div class="col-auto">
                         <label class="sr-only" for="inlineFormInput">Identificación</label>
                         <input type="number" class="form-control mb-2" id="identificación" name="documento"
                             placeholder="Documento" required>
                     </div>
+                    
                     <div class="col-auto">
                         <label class="sr-only" for="inlineFormInput">Contraseña</label>
                         <input type="text" class="form-control mb-2" id="contrase" name="contrasena"
@@ -50,17 +57,17 @@
 
                     <div class="col-auto">
                         <button type="submit" class="btn btn-primary mb-2">Enviar</button>
-                        <a href="{{ url('/cliente') }}" class="btn btn-danger mb-2" style="color:white"><i class="fas fa-sign-out-alt"></i>Salir</a>
+                        <a href="{{ url('/cliente') }}" class="btn btn-danger mb-2" style="color:white"><i
+                                class="fas fa-sign-out-alt"></i>Salir</a>
                     </div>
                 </div>
             </form>
         </div>
-
     </div>
 
     @yield('tablaCliente')
 
-
+<!-- MENSAJES DE VALIDACION CON LA LIBRERIA alert sweetalert2 -->
     @if(session('validarPaciente') == 'ok')
 
     <script>

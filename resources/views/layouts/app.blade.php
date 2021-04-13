@@ -33,6 +33,7 @@
 </head>
 
 <body>
+<!-- Plantilla para aplicación  -->
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container"> <img src="img/title" style ="width:5px" alt="">
@@ -113,6 +114,8 @@
 
         <main class="py-4">
             @yield('content')
+            
+        <!-- MENSAJES DE VALIDACION CON LA LIBRERIA alert sweetalert2 -->
 
             <!-- Crear usuario -->
             @if(session('crearUsuario') == 'ok')

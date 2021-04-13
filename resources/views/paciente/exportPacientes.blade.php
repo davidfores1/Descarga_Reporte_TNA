@@ -1,3 +1,5 @@
+
+<!-- Estructura de archivo de excel para descargar, poder modificarlo y ser cargado  -->
 <table>
     <thead>
         <tr>

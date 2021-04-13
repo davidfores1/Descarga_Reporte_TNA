@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
+
+    //vista de pacientes
     public function index(Request $request)
     {
 
@@ -17,10 +19,7 @@ class UsuarioController extends Controller
         $usuarios = User::orderBy('created_at','ASC')   
         ->name($name)
         ->email($email)
-        ->paginate(5);
-    //    $datos['usuarios']=User::paginate(5);
-    //     return view('usuario.index',$datos);
-   
+        ->paginate(5);   
         return view('usuario.index',compact('usuarios'));
     }
      
@@ -30,6 +29,7 @@ class UsuarioController extends Controller
         return view('auth.register');
     }
 
+    //crear usuario
     public function create(Request $request)
     {
         // valida si exite el registro
@@ -50,6 +50,7 @@ class UsuarioController extends Controller
         
     }
 
+    //realizar la consulta el id enviado y retornar sus registros
     public function edit($id){
 
         $usuario = User::findOrFail($id);
@@ -57,6 +58,7 @@ class UsuarioController extends Controller
 
     }
 
+    //editar usuario
     public function update(Request $request, $id){
 
         $datosUsuario = $request->except(['_token','_method']);
@@ -65,6 +67,7 @@ class UsuarioController extends Controller
 
     }
 
+    // Eliminar usuario
     public function destroy($id){
         User::destroy($id);
         return redirect('usuario');

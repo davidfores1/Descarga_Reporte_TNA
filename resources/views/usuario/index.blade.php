@@ -1,3 +1,5 @@
+<!-- Para crear paciente ruta: views/auth/register.blade.php -->
+
 @if (auth()->user()->id_rol == 1 )
 
 @extends('layouts.app')
