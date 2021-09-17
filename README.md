@@ -44,7 +44,4 @@ Admin: 123456
 sistemas2@inmuno.org - 123456
 Ximena717@gmail.com 123456
 
-Si tuvieramos que incluir o crear nuevas migraciones utilizaríamos:<br>
-php artisan migrate:refresh <br>
-php artisan migrate:fresh  //borra y crea todas las tablas de nuevo
 
