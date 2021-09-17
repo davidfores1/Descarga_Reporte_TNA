@@ -1,5 +1,5 @@
 <h1>REQUISITOS:</h1>
-Laravel Framework 8.47.0<br>
+Laravel Framework 8.35.1<br>
 MYSQL: 10.4.19<br>
 PHP Version 7.4.20<br>
 
@@ -38,6 +38,12 @@ Por último, ejecutamos las migraciones para que se generen las tablas con:<br>
 php artisan migrate<br>
 
 <h3>[Nota]:</h3>
+En el archivo db_tna.sql se escuentran datos para realizar insert y poder ver las funcionalidades de la aplicacion:
+user:  pass:
+Admin: 123456
+sistemas2@inmuno.org - 123456
+Ximena717@gmail.com 123456
+
 Si tuvieramos que incluir o crear nuevas migraciones utilizaríamos:<br>
 php artisan migrate:refresh <br>
 php artisan migrate:fresh  //borra y crea todas las tablas de nuevo
